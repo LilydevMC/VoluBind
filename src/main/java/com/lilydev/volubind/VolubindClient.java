@@ -2,11 +2,16 @@ package com.lilydev.volubind;
 
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.qsl.base.api.entrypoint.client.ClientModInitializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class VolubindClient implements ClientModInitializer {
 
+	public static final Logger LOGGER = LoggerFactory.getLogger("VoluBind");
+
+
 	@Override
 	public void onInitializeClient(ModContainer mod) {
-		Volubind.LOGGER.info("client initialized");
+		LOGGER.info("client initialized");
 	}
 }

@@ -15,13 +15,12 @@
 				"issues": "https://github.com/Lilydev-by-Jade/VoluBind-Quilt/issues",
 				"sources": "https://github.com/Lilydev-by-Jade/VoluBind-Quilt"
 			},
-			"icon": "assets/volubind/icon.png"
+			"icon": "assets/volubind/icon.png",
+			"license": "LGPL-3.0"
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
-		"environment": "client",
 		"entrypoints": {
-			"init": "com.lilydev.volubind.Volubind",
-			"client": "com.lilydev.volubind.VolubindClient"
+			"client_init": "com.lilydev.volubind.VolubindClient"
 		},
 		"depends": [
 			{
@@ -38,12 +37,14 @@
 			}
 		]
 	},
-	"mixin": "volubind.mixins.json",
-	"custom": {
-		"modmenu": {
-			"links": {
-				"modmenu.discord": "https://discord.gg/TZAt4PA5av"
-			}
+	"minecraft": {
+		"environment": "client"
+	},
+	"modmenu": {
+		"links": {
+			"modmenu.discord": "https://discord.gg/TZAt4PA5av",
+			"modmenu.kofi": "https://ko-fi.com/jadelily"
 		}
-	}
+	},
+	"mixin": "volubind.mixins.json"
 }
