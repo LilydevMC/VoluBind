@@ -6,9 +6,9 @@
 		"version": "${version}",
 		"metadata": {
 			"name": "VoluBind",
-			"description": "A client-sided Quilt mod for 1.19 that allows you to create keybinds to control your in-game volume.",
+			"description": "A client-side Quilt mod for 1.19 that allows you to create keybinds to control your in-game volume.",
 			"contributors": {
-				"Your name here": "jadelily18"
+				"jadelily18": "Owner"
 			},
 			"contact": {
 				"homepage": "https://lilydev.com/",
@@ -36,5 +36,12 @@
 			}
 		]
 	},
-	"mixin": "volubind.mixins.json"
+	"mixin": "volubind.mixins.json",
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.discord": "https://discord.gg/TZAt4PA5av"
+			}
+		}
+	}
 }
