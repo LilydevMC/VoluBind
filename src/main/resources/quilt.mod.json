@@ -18,8 +18,10 @@
 			"icon": "assets/volubind/icon.png"
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
+		"environment": "client",
 		"entrypoints": {
-			"init": "com.lilydev.volubind.VoluBind"
+			"init": "com.lilydev.volubind.Volubind",
+			"client": "com.lilydev.volubind.VolubindClient"
 		},
 		"depends": [
 			{

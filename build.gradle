@@ -44,6 +44,8 @@ dependencies {
 
 	modImplementation libs.modmenu
 	modImplementation libs.yetanotherconfiglib
+
+
 }
 
 processResources {
