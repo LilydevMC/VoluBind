@@ -1,0 +1,9 @@
+{
+  "volubind.gui.label.volume": "Game Volume",
+
+  "volubind.gui.volume.name.master": "Master Volume",
+  "volubind.gui.volume.tooltip.master": "Control's Minecraft's master volume.",
+
+  "volubind.gui.volume.name.music": "Music Volume",
+  "volubind.gui.volume.tooltip.music": "Control's Minecraft's music volume."
+}

@@ -21,7 +21,7 @@
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
 			"client_init": "com.lilydev.volubind.VolubindClient",
-			"modmenu": [ "com.lilydev.volubind.VolubindModMenuImpl" ]
+			"modmenu": [ "com.lilydev.volubind.integration.VolubindModMenuImpl" ]
 		},
 		"depends": [
 			{
