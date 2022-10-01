@@ -39,11 +39,10 @@ dependencies {
 	modImplementation libs.quilted.fabric.api
 	// modImplementation libs.bundles.quilted.fabric.api // If you wish to use Fabric API's deprecated modules, you can replace the above line with this one
 
-//	modImplementation "com.terraformersmc:modmenu:4.0.6"
-//	modImplementation "dev.isxander:yet-another-config-lib:1.5.0"
-
 	modImplementation libs.modmenu
 	modImplementation libs.yetanotherconfiglib
+	include libs.settxi.core
+	include libs.settxi.kotlinx
 
 
 }

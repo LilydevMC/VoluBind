@@ -8,6 +8,7 @@ quilted_fabric_api = "4.0.0-beta.7+0.59.0-1.19.2"
 
 modmenu = "4.0.6"
 yetanotherconfiglib = "1.5.0"
+settxi = "2.7.1"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
@@ -19,6 +20,8 @@ quilted_fabric_api_deprecated = { module = "org.quiltmc.quilted-fabric-api:quilt
 
 modmenu = { module = "com.terraformersmc:modmenu", version.ref = "modmenu" }
 yetanotherconfiglib = { module = "dev.isxander:yet-another-config-lib", version.ref = "yetanotherconfiglib" }
+settxi_core = { module = "dev.isxander.settxi:settxi-core", version.ref = "settxi" }
+settxi_kotlinx = { module = "dev.isxander.settxi:settxi-kotlinx-serialization", version.ref = "settxi" }
 
 # If you have multiple similar dependencies, you can declare a dependency bundle and reference it on the build script with "libs.bundles.example".
 [bundles]
