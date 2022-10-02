@@ -20,8 +20,14 @@
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"client_init": "com.lilydev.volubind.VolubindClient",
-			"modmenu": [ "com.lilydev.volubind.integration.VolubindModMenuImpl" ]
+			"client_init": {
+				"adapter": "kotlin",
+				"value": "com.lilydev.volubind.VolubindClient"
+			},
+			"modmenu": {
+				"adapter": "kotlin",
+				"value": "com.lilydev.volubind.integration.VolubindModMenuImpl"
+			}
 		},
 		"depends": [
 			{

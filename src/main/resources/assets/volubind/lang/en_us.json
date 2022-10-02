@@ -1,9 +1,15 @@
 {
-  "volubind.gui.label.volume": "Game Volume",
+  "volubind.gui.menu.settings": "VoluBind Settings",
 
-  "volubind.gui.volume.name.master": "Master Volume",
-  "volubind.gui.volume.tooltip.master": "Control's Minecraft's master volume.",
+  "volubind.gui.label.general.title": "General",
+  "volubind.gui.label.general.tooltip": "VoluBind's general settings.",
 
-  "volubind.gui.volume.name.music": "Music Volume",
-  "volubind.gui.volume.tooltip.music": "Control's Minecraft's music volume."
+  "volubind.gui.volume.category.label": "Game Volume",
+  "volubind.gui.volume.category.tooltip": "Controls Minecraft's game volume.",
+
+  "volubind.gui.volume.master.name": "Master Volume",
+  "volubind.gui.volume.master.tooltip": "Control's Minecraft's master volume.",
+
+  "volubind.gui.volume.music.name": "Music Volume",
+  "volubind.gui.volume.music.tooltip": "Control's Minecraft's music volume."
 }
