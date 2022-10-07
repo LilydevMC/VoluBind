@@ -25,9 +25,9 @@ of my mod, I will open an issue on their GitHub page.
 
 ## Gallery
 
-![VoluBind keybindings & gameplay](https://i.imgur.com/zPuHMML.mp4)
+![VoluBind keybindings & gameplay](https://i.imgur.com/hS1NTlT.mp4)
 
-![VoluBind settings menu](https://i.imgur.com/w89wCE3.mp4)
+![VoluBind settings menu](https://i.imgur.com/1D567PJ.mp4)
 
 ## License
 
