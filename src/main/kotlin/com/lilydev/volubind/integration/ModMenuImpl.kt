@@ -1,6 +1,6 @@
 package com.lilydev.volubind.integration
 
-import com.lilydev.volubind.VolubindConfig
+import com.lilydev.volubind.config.VolubindConfig
 import com.terraformersmc.modmenu.api.ConfigScreenFactory
 import com.terraformersmc.modmenu.api.ModMenuApi
 

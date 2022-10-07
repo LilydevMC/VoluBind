@@ -9,6 +9,11 @@
   "volubind.gui.volume.category.label": "Game Volume",
   "volubind.gui.volume.category.tooltip": "Controls Minecraft's game volume.",
 
+  "volubind.gui.toggled.category.label": "Toggled Game Volume",
+  "volubind.gui.toggled.category.tooltip": "Controls the volume toggled to when you use a keybind.",
+
+
+
   "volubind.gui.volume.master.name": "Master Volume",
   "volubind.gui.volume.master.tooltip": "Control's Minecraft's master volume.",
 
@@ -37,5 +42,62 @@
   "volubind.gui.volume.ambient.tooltip": "Control's Minecraft's ambient/environment volume.",
 
   "volubind.gui.volume.voice.name": "Voice/Speech Volume",
-  "volubind.gui.volume.voice.tooltip": "Control's Minecraft's voice/speech volume."
+  "volubind.gui.volume.voice.tooltip": "Control's Minecraft's voice/speech volume.",
+
+
+  "volubind.gui.toggled.master.name": "Toggled Master Volume",
+  "volubind.gui.toggled.master.tooltip": "Toggled Control's Minecraft's master volume.",
+
+  "volubind.gui.toggled.music.name": "Toggled Music Volume",
+  "volubind.gui.toggled.music.tooltip": "Toggled Control's Minecraft's music volume.",
+
+  "volubind.gui.toggled.records.name": "Toggled Jukebox/Note Blocks Volume",
+  "volubind.gui.toggled.records.tooltip": "Toggled Control's Minecraft's jukebox/note blocks volume.",
+
+  "volubind.gui.toggled.weather.name": "Toggled Weather Volume",
+  "volubind.gui.toggled.weather.tooltip": "Toggled Control's Minecraft's weather volume.",
+
+  "volubind.gui.toggled.blocks.name": "Toggled Blocks Volume",
+  "volubind.gui.toggled.blocks.tooltip": "Toggled Control's Minecraft's blocks volume.",
+
+  "volubind.gui.toggled.hostile.name": "Toggled Hostile Creatures Volume",
+  "volubind.gui.toggled.hostile.tooltip": "Toggled Control's Minecraft's hostile creatures volume.",
+
+  "volubind.gui.toggled.neutral.name": "Toggled Friendly Creatures Volume",
+  "volubind.gui.toggled.neutral.tooltip": "Toggled Control's Minecraft's friendly creatures volume.",
+
+  "volubind.gui.toggled.players.name": "Toggled Players Volume",
+  "volubind.gui.toggled.players.tooltip": "Toggled Control's Minecraft's players volume.",
+
+  "volubind.gui.toggled.ambient.name": "Toggled Ambient/Environment Volume",
+  "volubind.gui.toggled.ambient.tooltip": "Toggled Control's Minecraft's ambient/environment volume.",
+
+  "volubind.gui.toggled.voice.name": "Toggled Voice/Speech Volume",
+  "volubind.gui.toggled.voice.tooltip": "Toggled Control's Minecraft's voice/speech volume.",
+
+
+  "volubind.keybindings.category": "VoluBind",
+
+  "volubind.keybindings.open_config": "Open Config",
+
+  "volubind.keybindings.toggle_master": "Toggle Master Volume",
+
+  "volubind.keybindings.toggle_music": "Toggle Music Volume",
+
+  "volubind.keybindings.toggle_records": "Toggle Jukebox/Note Blocks Volume",
+
+  "volubind.keybindings.toggle_weather": "Toggle Weather Volume",
+
+  "volubind.keybindings.toggle_blocks": "Toggle Blocks Volume",
+
+  "volubind.keybindings.toggle_hostile": "Toggle Hostile Creatures Volume",
+
+  "volubind.keybindings.toggle_neutral": "Toggle Friendly Creatures Volume",
+
+  "volubind.keybindings.toggle_players": "Toggle Players Volume",
+
+  "volubind.keybindings.toggle_ambient": "Toggle Ambient/Environment Volume",
+
+  "volubind.keybindings.toggle_voice": "Toggle Voice/Speech Volume"
+
 }
