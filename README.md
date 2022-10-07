@@ -1,29 +1,36 @@
-# Quilt Template Mod
+# VoluBind
 
-The official Quilt template Mod. You can use it as a template for your own mods!
+[![Modrinth Downloads](https://img.shields.io/badge/dynamic/json?color=30b27c&style=flat-square&label=downloads&query=downloads&url=https%3A%2F%2Fapi.modrinth.com%2Fv2%2Fproject%2FkfEow3K7&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbDpzcGFjZT0icHJlc2VydmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEuNSIgY2xpcC1ydWxlPSJldmVub2RkIiB2aWV3Qm94PSIwIDAgNjggNjgiPjxwYXRoIGZpbGw9Im5vbmUiIGQ9Ik0uMDUgMGg2NnY2NmgtNjZ6Ii8+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNLjA1IDBoNjZ2NjZoLTY2eiIvPjwvY2xpcFBhdGg+PGcgY2xpcC1wYXRoPSJ1cmwoI2EpIj48Y2xpcFBhdGggaWQ9ImIiPjxjaXJjbGUgY3g9IjMzLjA1IiBjeT0iMzMiIHI9IjMzIi8+PC9jbGlwUGF0aD48ZyBjbGlwLXBhdGg9InVybCgjYikiPjxjbGlwUGF0aCBpZD0iYyI+PHBhdGggZD0iTTgzLjA1LTE3aC0xMDBWODNoMTAwVi0xN1pNMjkuMDUxIDMyLjI5NWwuMDc3IDEuNzU3IDguODI5IDMyLjk2MyA3Ljg0NC0yLjEwMi04LjU5Ny0zMi4wOTRMNDMuMDA5LS4xMTNsLTcuOTk3LTEuNDEtNS45NjEgMzMuODE4WiIvPjwvY2xpcFBhdGg+PGcgY2xpcC1wYXRoPSJ1cmwoI2MpIj48cGF0aCBmaWxsPSIjMzBiMjdjIiBkPSJNMzMuMDUgMGMxOC4yMDYgMCAzMi45ODggMTQuNzg3IDMyLjk4OCAzM1M1MS4yNTYgNjYgMzMuMDUgNjZDMTQuODQzIDY2IC4wNjEgNTEuMjEzLjA2MSAzM1MxNC44NDMgMCAzMy4wNSAwWm0wIDljMTMuMjQgMCAyMy45ODggMTAuNzU1IDIzLjk4OCAyNFM0Ni4yOSA1NyAzMy4wNSA1N0MxOS44MDkgNTcgOS4wNjEgNDYuMjQ1IDkuMDYxIDMzUzE5LjgwOSA5IDMzLjA1IDlaIi8+PC9nPjxjbGlwUGF0aCBpZD0iZCI+PHBhdGggZD0iTS0xNi45NS0xN3Y0Nmg1MGwxLjM2OC4yNDFMODIuMDUgNDYuNTc4bC0yLjczNyA3LjUxN0wzMi4zNDQgMzdILTE2Ljk1djQ2aDEwMFYtMTdoLTEwMFoiLz48L2NsaXBQYXRoPjxnIGNsaXAtcGF0aD0idXJsKCNkKSI+PHBhdGggZmlsbD0iIzMwYjI3YyIgZD0iTTMzLjA1LTE3YzI3LjU5NSAwIDUwIDIyLjQwNCA1MCA1MHMtMjIuNDA1IDUwLTUwIDUwYy0yNy41OTYgMC01MC0yMi40MDQtNTAtNTBzMjIuNDA0LTUwIDUwLTUwWm0wIDljMjIuNjI4IDAgNDEgMTguMzcxIDQxIDQxcy0xOC4zNzIgNDEtNDEgNDFjLTIyLjYyOSAwLTQxLTE4LjM3MS00MS00MXMxOC4zNzEtNDEgNDEtNDFaIi8+PC9nPjxjbGlwUGF0aCBpZD0iZSI+PHBhdGggZD0iTTMzLjA1LTE3YzI3LjU5NSAwIDUwIDIyLjQwNCA1MCA1MHMtMjIuNDA1IDUwLTUwIDUwYy0yNy41OTYgMC01MC0yMi40MDQtNTAtNTBzMjIuNDA0LTUwIDUwLTUwWm0wIDM5LjU0OWM1Ljc2NyAwIDEwLjQ1IDQuNjgzIDEwLjQ1IDEwLjQ1MSAwIDUuNzY4LTQuNjgzIDEwLjQ1MS0xMC40NSAxMC40NTEtNS43NjggMC0xMC40NTEtNC42ODMtMTAuNDUxLTEwLjQ1MSAwLTUuNzY4IDQuNjgzLTEwLjQ1MSAxMC40NTEtMTAuNDUxWiIvPjwvY2xpcFBhdGg+PGcgY2xpcC1wYXRoPSJ1cmwoI2UpIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiMzMGIyN2MiIHN0cm9rZS13aWR0aD0iOSIgZD0ibTMzLjA1IDMzLTQ0LjgyOSAyNS44ODIiLz48L2c+PGNsaXBQYXRoIGlkPSJmIj48cGF0aCBkPSJNMzMuMDUtMTdjMjcuNTk1IDAgNTAgMjIuNDA0IDUwIDUwcy0yMi40MDUgNTAtNTAgNTBjLTI3LjU5NiAwLTUwLTIyLjQwNC01MC01MHMyMi40MDQtNTAgNTAtNTBabTAgMjUuMzZjMTMuNTk5IDAgMjQuNjQgMTEuMDQxIDI0LjY0IDI0LjY0UzQ2LjY0OSA1Ny42NCAzMy4wNSA1Ny42NEMxOS40NSA1Ny42NCA4LjQwOSA0Ni41OTkgOC40MDkgMzNTMTkuNDUgOC4zNiAzMy4wNSA4LjM2WiIvPjwvY2xpcFBhdGg+PGcgY2xpcC1wYXRoPSJ1cmwoI2YpIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiMzMGIyN2MiIHN0cm9rZS13aWR0aD0iOSIgZD0ibTMzLjA1IDMzIDUwLTEzLjM5NyIvPjwvZz48cGF0aCBmaWxsPSIjMzBiMjdjIiBkPSJNMjAuMjkzIDM1Ljc0NiAxOC4wNSAyOGw4LTkgMTEtMyA0IDQtNiA2LTQgMS0zIDQgMS4xMiA0LjI0IDMuMTEyIDMuMDkgNC45NjQtLjU5OCAyLjg2Ni0yLjk2NCA4LjE5Ni0yLjE5NiAxLjQ2NCA1LjQ2NC04LjA5OCA4LjAyNkwyOS44OCA0OC40OWwtNS41ODctNS44MTUtNC02LjkyOVoiLz48L2c+PC9nPjwvc3ZnPg==)](https://modrinth.com/mod/volubind)
+[![License](https://img.shields.io/github/license/Lilydev-By-Jade/VoluBind?style=flat-square)](https://github.com/Lilydev-By-Jade/VoluBind/blob/master/LICENSE)
+[![Lilydev Discord](https://img.shields.io/discord/995465843364343883?color=5865F2&style=flat-square&label=discord)](https://discord.gg/TZAt4PA5av)
+[![Kofi](https://badgen.net/badge/icon/kofi?icon=kofi&label=jadelily&color=pink&style=flat-square)](https://ko-fi.com/jadelily)
 
-## Usage
+VoluBind is a client-side Quilt mod, allowing you
+to toggle your volume between two values with the press of a button!
+It allows you to create these keybindings for every single
+volume option in Minecraft. Whether you want to temporarily toggle
+off those annoying villager noises, or your incredibly loud
+enderman farm, this mod is for you!
 
-In order to use this mod as a template:
 
-1. Create a new repository from this template with `Use this template`
-2. Clone the recently-created repo on your PC
-3. Make the necessary changes in order to make it yours:
-    - Update `gradle.properties` in order to use your Maven group and mod ID
-        - If you don't know which Maven group to use, and you are planning to host the mod's source code on GitHub, use `io.github.<Your_Username_Here>`
-    - Update `quilt.mod.json` in order to reflect your mod's metadata
-        - If you are planning to include (jar-in-jar) a mod, don't forget to declare its dependency on it!
-        - The icon provided here is a placeholder one. If you aren't able to replace it yet, you can delete it and remove the "icon" property
-    - Create a LICENSE file for this mod! If you don't know which license to use, check out [here](https://choosealicense.com/).
-        - If you use `LICENSE.md`, don't forget to update the buildscript in order to use that file name!
-        - In `quilt.mod.json`, don't forget to put the license's [SPDX identifier](https://spdx.org/licenses/) under the `"license"` property in `"metadata"`.
-        - The GPLv3 and AGPLv3 are not valid mod licenses, so you can use almost any license except for those.
-    - Update the Java sub-directory structure so it reflects your Maven group
-    - If the dependencies on `gradle/libs.versions.toml` isn't up-to-date, feel free to update them! The [linked utility](https://lambdaurora.dev/tools/import_quilt.html) should help you in this easy and quick process.
-4. The mod is now ready to be worked on!
+## Dependencies
+This mod requires [Quilted Fabric API](https://modrinth.com/mod/qsl), [Quilt Kotlin Libraries](https://modrinth.com/mod/qkl), and [YetAnotherConfigLib](https://modrinth.com/mod/yacl).
+
+Quilt Kotlin Libraries is still very much
+in its beta phase, so there may be some hiccups.
+Please open [an issue here](https://github.com/Lilydev-by-Jade/VoluBind/issues)
+first if you encounter any issues with VoluBind.
+If it seems to be an issue with QKL instead
+of my mod, I will open an issue on their GitHub page.
+
+## Gallery
+
+![VoluBind keybindings & gameplay](https://i.imgur.com/zPuHMML.mp4)
+
+![VoluBind settings menu](https://i.imgur.com/w89wCE3.mp4)
 
 ## License
 
-This template on the QuiltMC GitHub is licensed under the [Creative Common Zero v1.0 license](./LICENSE-TEMPLATE.md).
+This mod is licensed under the [GNU Lesser General Public License v3.0](https://github.com/Lilydev-By-Jade/VoluBind/blob/master/LICENSE).
 
-Mods created with this template are not automatically licensed under the CC0, and are not required to give any kind of credit back to QuiltMC for this template.
+
