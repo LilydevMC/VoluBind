@@ -25,9 +25,9 @@ of my mod, I will open an issue on their GitHub page.
 
 ## Gallery
 
-![VoluBind keybindings & gameplay](https://i.imgur.com/hS1NTlT.mp4)
+![VoluBind keybindings & gameplay](https://github.com/Lilydev-by-Jade/VoluBind/blob/1.19/gallery/keybinding.gif)
 
-![VoluBind settings menu](https://i.imgur.com/1D567PJ.mp4)
+![VoluBind settings menu](https://github.com/Lilydev-by-Jade/VoluBind/blob/1.19/gallery/settings.gif)
 
 ## License
 
