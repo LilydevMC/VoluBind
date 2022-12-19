@@ -9,7 +9,8 @@ quilted_fabric_api = "5.0.0-alpha.6+0.69.1-1.19.3"
 modmenu = "5.0.2"
 yetanotherconfiglib = "2.1.1"
 settxi = "2.10.3"
-quilt_language_kotlin = "1.0.0+kt.1.7.20+flk.1.8.5"
+#quilt_language_kotlin = "1.0.0+kt.1.7.20+flk.1.8.5"
+flk = "1.8.7+kotlin.1.7.22"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
@@ -18,7 +19,9 @@ quilt_loader = { module = "org.quiltmc:quilt-loader", version.ref = "quilt_loade
 
 quilted_fabric_api = { module = "org.quiltmc.quilted-fabric-api:quilted-fabric-api", version.ref = "quilted_fabric_api" }
 quilted_fabric_api_deprecated = { module = "org.quiltmc.quilted-fabric-api:quilted-fabric-api-deprecated", version.ref = "quilted_fabric_api" }
-quilt_language_kotlin = { module = "org.quiltmc.quilt-kotlin-libraries:quilt-kotlin-libraries", version.ref = "quilt_language_kotlin" }
+#quilt_language_kotlin = { module = "org.quiltmc.quilt-kotlin-libraries:quilt-kotlin-libraries", version.ref = "quilt_language_kotlin" }
+flk = { module = "net.fabricmc:fabric-language-kotlin", version.ref = "flk" }
+
 
 modmenu = { module = "com.terraformersmc:modmenu", version.ref = "modmenu" }
 yetanotherconfiglib = { module = "dev.isxander:yet-another-config-lib", version.ref = "yetanotherconfiglib" }
