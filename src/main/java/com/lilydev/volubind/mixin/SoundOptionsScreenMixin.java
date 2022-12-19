@@ -24,22 +24,38 @@ public class SoundOptionsScreenMixin extends GameOptionsScreen {
 		int i = this.height / 6 - 12;
 		int k = 0;
 
-		this.addDrawableChild(new ButtonWidget(this.width / 2 - 155, i, 310, 20,
+		this.addDrawableChild(
+			ButtonWidget.builder(
 				Text.translatable("volubind.gui.menu.game_volume.title"),
 				(button) -> {
 					assert this.client != null;
 					this.client.setScreen(VolubindConfig.INSTANCE.createGui(this));
-				}));
+				})
+				.position(this.width / 2 - 155, i)
+				.width(310)
+				.build()
+		);
 		k += 2;
-		this.addDrawableChild(this.gameOptions.getSoundDevice().createButton(this.gameOptions, this.width / 2 - 155, i + 22 * (k >> 1), 310));
+
+		this.addDrawableChild(this.gameOptions.getSoundDevice().m_ffpjahoa(this.gameOptions, this.width / 2 - 155, i + 22 * (k >> 1), 310));
 		k += 2;
-		this.addDrawableChild(this.gameOptions.getShowSubtitles().createButton(this.gameOptions, this.width / 2 - 155, i + 22 * (k >> 1), 150));
-		this.addDrawableChild(this.gameOptions.getDirectionalAudio().createButton(this.gameOptions, this.width / 2 + 5, i + 22 * (k >> 1), 150));
+
+		this.addDrawableChild(this.gameOptions.getShowSubtitles().m_ffpjahoa(this.gameOptions, this.width / 2 - 155, i + 22 * (k >> 1), 150));
+		this.addDrawableChild(this.gameOptions.getDirectionalAudio().m_ffpjahoa(this.gameOptions, this.width / 2 + 5, i + 22 * (k >> 1), 150));
 		k += 2;
-		this.addDrawableChild(new ButtonWidget(this.width / 2 - 100, i + 22 * (k >> 1), 200, 20, ScreenTexts.DONE, (button) -> {
-			assert this.client != null;
-			this.client.setScreen(this.parent);
-		}));
+
+		this.addDrawableChild(
+			ButtonWidget.builder(
+				ScreenTexts.DONE,
+				(button) -> {
+					assert this.client != null;
+					this.client.setScreen(this.parent);
+				})
+				.position(this.width / 2 - 100, i + 22 * (k >> 1))
+				.width(200)
+				.build()
+		);
+
 		ci.cancel();
 	}
 

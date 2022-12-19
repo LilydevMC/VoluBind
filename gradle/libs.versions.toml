@@ -1,15 +1,15 @@
 [versions]
 # The latest versions are available at https://lambdaurora.dev/tools/import_quilt.html
-minecraft = "1.19.2"
-quilt_mappings = "1.19.2+build.3"
-quilt_loader = "0.17.1"
+minecraft = "1.19.3"
+quilt_mappings = "1.19.3+build.5"
+quilt_loader = "0.18.1-beta.25"
 
-quilted_fabric_api = "4.0.0-beta.13+0.62.0-1.19.2"
+quilted_fabric_api = "5.0.0-alpha.6+0.69.1-1.19.3"
 
-modmenu = "4.0.6"
-yetanotherconfiglib = "1.5.0"
+modmenu = "5.0.2"
+yetanotherconfiglib = "2.1.1"
 settxi = "2.10.3"
-quilt_language_kotlin = "0.+"
+quilt_language_kotlin = "1.0.0+kt.1.7.20+flk.1.8.5"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
@@ -32,4 +32,4 @@ settxi_gui_yacl = { module = "dev.isxander.settxi:settxi-gui-yacl", version.ref 
 quilted_fabric_api = ["quilted_fabric_api", "quilted_fabric_api_deprecated"]
 
 [plugins]
-quilt_loom = { id = "org.quiltmc.loom", version = "0.12.+" }
+quilt_loom = { id = "org.quiltmc.loom", version = "1.0.+" }

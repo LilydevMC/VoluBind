@@ -256,7 +256,7 @@ object VolubindConfig : SettxiFileConfig(
                                 run {
                                     val newFloat = newValue.toFloat() / 100
                                     masterVolume = newValue
-                                    MinecraftClient.getInstance().options.setSoundVolume(
+                                    MinecraftClient.getInstance().soundManager.updateSoundVolume(
                                         SoundCategory.MASTER,
                                         newFloat
                                     )
@@ -280,7 +280,7 @@ object VolubindConfig : SettxiFileConfig(
                                 run {
                                     val newFloat = newValue.toFloat() / 100
                                     musicVolume = newValue
-                                    MinecraftClient.getInstance().options.setSoundVolume(
+                                    MinecraftClient.getInstance().soundManager.updateSoundVolume(
                                         SoundCategory.MUSIC,
                                         newFloat
                                     )
@@ -304,7 +304,7 @@ object VolubindConfig : SettxiFileConfig(
                                 run {
                                     val newFloat = newValue.toFloat() / 100
                                     recordsVolume = newValue
-                                    MinecraftClient.getInstance().options.setSoundVolume(
+                                    MinecraftClient.getInstance().soundManager.updateSoundVolume(
                                         SoundCategory.RECORDS,
                                         newFloat
                                     )
@@ -328,7 +328,7 @@ object VolubindConfig : SettxiFileConfig(
                                 run {
                                     val newFloat = newValue.toFloat() / 100
                                     weatherVolume = newValue
-                                    MinecraftClient.getInstance().options.setSoundVolume(
+                                    MinecraftClient.getInstance().soundManager.updateSoundVolume(
                                         SoundCategory.WEATHER,
                                         newFloat
                                     )
@@ -352,7 +352,7 @@ object VolubindConfig : SettxiFileConfig(
                                 run {
                                     val newFloat = newValue.toFloat() / 100
                                     blocksVolume = newValue
-                                    MinecraftClient.getInstance().options.setSoundVolume(
+                                    MinecraftClient.getInstance().soundManager.updateSoundVolume(
                                         SoundCategory.BLOCKS,
                                         newFloat
                                     )
@@ -376,7 +376,7 @@ object VolubindConfig : SettxiFileConfig(
                                 run {
                                     val newFloat = newValue.toFloat() / 100
                                     hostileVolume = newValue
-                                    MinecraftClient.getInstance().options.setSoundVolume(
+                                    MinecraftClient.getInstance().soundManager.updateSoundVolume(
                                         SoundCategory.HOSTILE,
                                         newFloat
                                     )
@@ -400,7 +400,7 @@ object VolubindConfig : SettxiFileConfig(
                                 run {
                                     val newFloat = newValue.toFloat() / 100
                                     neutralVolume = newValue
-                                    MinecraftClient.getInstance().options.setSoundVolume(
+                                    MinecraftClient.getInstance().soundManager.updateSoundVolume(
                                         SoundCategory.NEUTRAL,
                                         newFloat
                                     )
@@ -424,7 +424,7 @@ object VolubindConfig : SettxiFileConfig(
                                 run {
                                     val newFloat = newValue.toFloat() / 100
                                     playersVolume = newValue
-                                    MinecraftClient.getInstance().options.setSoundVolume(
+                                    MinecraftClient.getInstance().soundManager.updateSoundVolume(
                                         SoundCategory.PLAYERS,
                                         newFloat
                                     )
@@ -448,7 +448,7 @@ object VolubindConfig : SettxiFileConfig(
                                 run {
                                     val newFloat = newValue.toFloat() / 100
                                     ambientVolume = newValue
-                                    MinecraftClient.getInstance().options.setSoundVolume(
+                                    MinecraftClient.getInstance().soundManager.updateSoundVolume(
                                         SoundCategory.AMBIENT,
                                         newFloat
                                     )
@@ -472,7 +472,7 @@ object VolubindConfig : SettxiFileConfig(
                                 run {
                                     val newFloat = newValue.toFloat() / 100
                                     voiceVolume = newValue
-                                    MinecraftClient.getInstance().options.setSoundVolume(
+                                    MinecraftClient.getInstance().soundManager.updateSoundVolume(
                                         SoundCategory.VOICE,
                                         newFloat
                                     )

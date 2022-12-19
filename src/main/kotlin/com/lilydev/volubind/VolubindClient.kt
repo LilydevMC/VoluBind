@@ -71,110 +71,110 @@ object VolubindClient : ClientModInitializer {
 
                 if (toggleMasterVolume.wasPressed()) {
                     if (VolubindConfig.masterToggled) {
-                        client.options.setSoundVolume(SoundCategory.MASTER, intToFloat(VolubindConfig.masterVolume))
+                        client.soundManager.updateSoundVolume(SoundCategory.MASTER, intToFloat(VolubindConfig.masterVolume))
                         VolubindConfig.masterToggled = false
                         client.inGameHud.chatHud.addMessage(Text.of("Volume 'MASTER' set to: ${VolubindConfig.masterVolume}%!"))
                     } else {
-                        client.options.setSoundVolume(SoundCategory.MASTER, intToFloat(VolubindConfig.toggledMaster))
+                        client.soundManager.updateSoundVolume(SoundCategory.MASTER, intToFloat(VolubindConfig.toggledMaster))
                         VolubindConfig.masterToggled = true
                         client.inGameHud.chatHud.addMessage(Text.of("Volume 'MASTER' set to: ${VolubindConfig.toggledMaster}%!"))
                     }
                 }
                 if (toggleMusicVolume.wasPressed()) {
                     if (VolubindConfig.musicToggled) {
-                        client.options.setSoundVolume(SoundCategory.MUSIC, intToFloat(VolubindConfig.musicVolume))
+                        client.soundManager.updateSoundVolume(SoundCategory.MUSIC, intToFloat(VolubindConfig.musicVolume))
                         VolubindConfig.musicToggled = false
                         client.inGameHud.chatHud.addMessage(Text.of("Volume 'MUSIC' set to: ${VolubindConfig.musicVolume}%!"))
                     } else {
-                        client.options.setSoundVolume(SoundCategory.MUSIC, intToFloat(VolubindConfig.toggledMusic))
+                        client.soundManager.updateSoundVolume(SoundCategory.MUSIC, intToFloat(VolubindConfig.toggledMusic))
                         VolubindConfig.musicToggled = true
                         client.inGameHud.chatHud.addMessage(Text.of("Volume 'MUSIC' set to: ${VolubindConfig.toggledMusic}%!"))
                     }
                 }
                 if (toggleRecordsVolume.wasPressed()) {
                     if (VolubindConfig.recordsToggled) {
-                        client.options.setSoundVolume(SoundCategory.RECORDS, intToFloat(VolubindConfig.recordsVolume))
+                        client.soundManager.updateSoundVolume(SoundCategory.RECORDS, intToFloat(VolubindConfig.recordsVolume))
                         VolubindConfig.recordsToggled = false
                         client.inGameHud.chatHud.addMessage(Text.of("Volume 'RECORDS' set to: ${VolubindConfig.recordsVolume}%!"))
                     } else {
-                        client.options.setSoundVolume(SoundCategory.RECORDS, intToFloat(VolubindConfig.toggledRecords))
+                        client.soundManager.updateSoundVolume(SoundCategory.RECORDS, intToFloat(VolubindConfig.toggledRecords))
                         VolubindConfig.recordsToggled = true
                         client.inGameHud.chatHud.addMessage(Text.of("Volume 'RECORDS' set to: ${VolubindConfig.toggledRecords}%!"))
                     }
                 }
                 if (toggleWeatherVolume.wasPressed()) {
                     if (VolubindConfig.weatherToggled) {
-                        client.options.setSoundVolume(SoundCategory.WEATHER, intToFloat(VolubindConfig.weatherVolume))
+                        client.soundManager.updateSoundVolume(SoundCategory.WEATHER, intToFloat(VolubindConfig.weatherVolume))
                         VolubindConfig.weatherToggled = false
                         client.inGameHud.chatHud.addMessage(Text.of("Volume 'WEATHER' set to: ${VolubindConfig.weatherVolume}%!"))
                     } else {
-                        client.options.setSoundVolume(SoundCategory.WEATHER, intToFloat(VolubindConfig.toggledWeather))
+                        client.soundManager.updateSoundVolume(SoundCategory.WEATHER, intToFloat(VolubindConfig.toggledWeather))
                         VolubindConfig.weatherToggled = true
                         client.inGameHud.chatHud.addMessage(Text.of("Volume 'WEATHER' set to: ${VolubindConfig.toggledWeather}%!"))
                     }
                 }
                 if (toggleBlocksVolume.wasPressed()) {
                     if (VolubindConfig.blocksToggled) {
-                        client.options.setSoundVolume(SoundCategory.BLOCKS, intToFloat(VolubindConfig.blocksVolume))
+                        client.soundManager.updateSoundVolume(SoundCategory.BLOCKS, intToFloat(VolubindConfig.blocksVolume))
                         VolubindConfig.blocksToggled = false
                         client.inGameHud.chatHud.addMessage(Text.of("Volume 'BLOCKS' set to: ${VolubindConfig.blocksVolume}%!"))
                     } else {
-                        client.options.setSoundVolume(SoundCategory.BLOCKS, intToFloat(VolubindConfig.toggledBlocks))
+                        client.soundManager.updateSoundVolume(SoundCategory.BLOCKS, intToFloat(VolubindConfig.toggledBlocks))
                         VolubindConfig.blocksToggled = true
                         client.inGameHud.chatHud.addMessage(Text.of("Volume 'BLOCKS' set to: ${VolubindConfig.toggledBlocks}%!"))
                     }
                 }
                 if (toggleHostileVolume.wasPressed()) {
                     if (VolubindConfig.hostileToggled) {
-                        client.options.setSoundVolume(SoundCategory.HOSTILE, intToFloat(VolubindConfig.hostileVolume))
+                        client.soundManager.updateSoundVolume(SoundCategory.HOSTILE, intToFloat(VolubindConfig.hostileVolume))
                         VolubindConfig.hostileToggled = false
                         client.inGameHud.chatHud.addMessage(Text.of("Volume 'HOSTILE' set to: ${VolubindConfig.hostileVolume}%!"))
                     } else {
-                        client.options.setSoundVolume(SoundCategory.HOSTILE, intToFloat(VolubindConfig.toggledHostile))
+                        client.soundManager.updateSoundVolume(SoundCategory.HOSTILE, intToFloat(VolubindConfig.toggledHostile))
                         VolubindConfig.hostileToggled = true
                         client.inGameHud.chatHud.addMessage(Text.of("Volume 'HOSTILE' set to: ${VolubindConfig.toggledHostile}%!"))
                     }
                 }
                 if (toggleNeutralVolume.wasPressed()) {
                     if (VolubindConfig.neutralToggled) {
-                        client.options.setSoundVolume(SoundCategory.NEUTRAL, intToFloat(VolubindConfig.neutralVolume))
+                        client.soundManager.updateSoundVolume(SoundCategory.NEUTRAL, intToFloat(VolubindConfig.neutralVolume))
                         VolubindConfig.neutralToggled = false
                         client.inGameHud.chatHud.addMessage(Text.of("Volume 'NEUTRAL' set to: ${VolubindConfig.neutralToggled}%!"))
                     } else {
-                        client.options.setSoundVolume(SoundCategory.NEUTRAL, intToFloat(VolubindConfig.toggledNeutral))
+                        client.soundManager.updateSoundVolume(SoundCategory.NEUTRAL, intToFloat(VolubindConfig.toggledNeutral))
                         VolubindConfig.neutralToggled = true
                         client.inGameHud.chatHud.addMessage(Text.of("Volume 'NEUTRAL' set to: ${VolubindConfig.toggledNeutral}%!"))
                     }
                 }
                 if (togglePlayersVolume.wasPressed()) {
                     if (VolubindConfig.playersToggled) {
-                        client.options.setSoundVolume(SoundCategory.PLAYERS, intToFloat(VolubindConfig.playersVolume))
+                        client.soundManager.updateSoundVolume(SoundCategory.PLAYERS, intToFloat(VolubindConfig.playersVolume))
                         VolubindConfig.playersToggled = false
                         client.inGameHud.chatHud.addMessage(Text.of("Volume 'PLAYERS' set to: ${VolubindConfig.playersVolume}%!"))
                     } else {
-                        client.options.setSoundVolume(SoundCategory.PLAYERS, intToFloat(VolubindConfig.toggledPlayers))
+                        client.soundManager.updateSoundVolume(SoundCategory.PLAYERS, intToFloat(VolubindConfig.toggledPlayers))
                         VolubindConfig.playersToggled = true
                         client.inGameHud.chatHud.addMessage(Text.of("Volume 'PLAYERS' set to: ${VolubindConfig.toggledPlayers}%!"))
                     }
                 }
                 if (toggleAmbientVolume.wasPressed()) {
                     if (VolubindConfig.ambientToggled) {
-                        client.options.setSoundVolume(SoundCategory.AMBIENT, intToFloat(VolubindConfig.ambientVolume))
+                        client.soundManager.updateSoundVolume(SoundCategory.AMBIENT, intToFloat(VolubindConfig.ambientVolume))
                         VolubindConfig.ambientToggled = false
                         client.inGameHud.chatHud.addMessage(Text.of("Volume 'AMBIENT' set to: ${VolubindConfig.ambientVolume}%!"))
                     } else {
-                        client.options.setSoundVolume(SoundCategory.AMBIENT, intToFloat(VolubindConfig.toggledAmbient))
+                        client.soundManager.updateSoundVolume(SoundCategory.AMBIENT, intToFloat(VolubindConfig.toggledAmbient))
                         VolubindConfig.ambientToggled = true
                         client.inGameHud.chatHud.addMessage(Text.of("Volume 'AMBIENT' set to: ${VolubindConfig.toggledAmbient}%!"))
                     }
                 }
                 if (toggleVoiceVolume.wasPressed()) {
                     if (VolubindConfig.voiceToggled) {
-                        client.options.setSoundVolume(SoundCategory.VOICE, intToFloat(VolubindConfig.voiceVolume))
+                        client.soundManager.updateSoundVolume(SoundCategory.VOICE, intToFloat(VolubindConfig.voiceVolume))
                         VolubindConfig.voiceToggled = false
                         client.inGameHud.chatHud.addMessage(Text.of("Volume 'VOICE' set to: ${VolubindConfig.voiceVolume}%!"))
                     } else {
-                        client.options.setSoundVolume(SoundCategory.VOICE, intToFloat(VolubindConfig.toggledVoice))
+                        client.soundManager.updateSoundVolume(SoundCategory.VOICE, intToFloat(VolubindConfig.toggledVoice))
                         VolubindConfig.voiceToggled = true
                         client.inGameHud.chatHud.addMessage(Text.of("Volume 'VOICE' set to: ${VolubindConfig.toggledVoice}%!"))
                     }
