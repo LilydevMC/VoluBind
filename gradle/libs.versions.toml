@@ -8,7 +8,7 @@ quilted_fabric_api = "5.0.0-alpha.6+0.69.1-1.19.3"
 
 modmenu = "5.0.2"
 yetanotherconfiglib = "2.1.1"
-settxi = "2.10.3"
+settxi = "2.10.6"
 #quilt_language_kotlin = "1.0.0+kt.1.7.20+flk.1.8.5"
 flk = "1.8.7+kotlin.1.7.22"
 
