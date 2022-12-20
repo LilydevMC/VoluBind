@@ -223,6 +223,11 @@ object VolubindConfig : SettxiFileConfig(
         return (MinecraftClient.getInstance().options.getSoundVolume(soundCategory) * 100).toInt()
     }
 
+    public fun setSoundVolume(soundCategory: SoundCategory, volume: Float) {
+        val client: MinecraftClient = MinecraftClient.getInstance()
+        client.soundManager.updateSoundVolume(soundCategory, volume)
+    }
+
     fun createGui(parent: Screen?): Screen {
         return YetAnotherConfigLib.createBuilder()
             .title(Text.translatable("volubind.gui.label.general.title"))
