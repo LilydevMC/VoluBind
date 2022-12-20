@@ -246,13 +246,8 @@ object VolubindConfig : SettxiFileConfig(
                         .tooltip(Text.translatable("volubind.gui.volume.master.tooltip"))
                         .binding(Binding.generic(
                             masterVolume,
-                            { run {
-
-
-                                return@generic masterVolume
-                            } },
-                            {
-                                    newValue: Int ->
+                            { masterVolume },
+                            { newValue: Int ->
                                 run {
                                     val newFloat = newValue.toFloat() / 100
                                     masterVolume = newValue
@@ -260,12 +255,13 @@ object VolubindConfig : SettxiFileConfig(
                                         SoundCategory.MASTER,
                                         newFloat
                                     )
+                                    MinecraftClient.getInstance().options.write()
                                     masterToggled = false
                                 }
                             }
                         ))
-                        .controller {
-                                option: Option<Int> -> IntegerSliderController(option, 0, 100, 1)
+                        .controller { option: Option<Int> ->
+                            IntegerSliderController(option, 0, 100, 1)
                         }
                         .build()
                     )
@@ -275,8 +271,7 @@ object VolubindConfig : SettxiFileConfig(
                         .binding(Binding.generic(
                             musicVolume,
                             { musicVolume },
-                            {
-                                    newValue: Int ->
+                            { newValue: Int ->
                                 run {
                                     val newFloat = newValue.toFloat() / 100
                                     musicVolume = newValue
@@ -284,12 +279,13 @@ object VolubindConfig : SettxiFileConfig(
                                         SoundCategory.MUSIC,
                                         newFloat
                                     )
+                                    MinecraftClient.getInstance().options.write()
                                     musicToggled = false
                                 }
                             }
                         ))
-                        .controller {
-                                option: Option<Int> -> IntegerSliderController(option, 0, 100, 1)
+                        .controller { option: Option<Int> ->
+                            IntegerSliderController(option, 0, 100, 1)
                         }
                         .build()
                     )
@@ -299,8 +295,7 @@ object VolubindConfig : SettxiFileConfig(
                         .binding(Binding.generic(
                             recordsVolume,
                             { recordsVolume },
-                            {
-                                    newValue: Int ->
+                            { newValue: Int ->
                                 run {
                                     val newFloat = newValue.toFloat() / 100
                                     recordsVolume = newValue
@@ -308,12 +303,13 @@ object VolubindConfig : SettxiFileConfig(
                                         SoundCategory.RECORDS,
                                         newFloat
                                     )
+                                    MinecraftClient.getInstance().options.write()
                                     recordsToggled = false
                                 }
                             }
                         ))
-                        .controller {
-                                option: Option<Int> -> IntegerSliderController(option, 0, 100, 1)
+                        .controller { option: Option<Int> ->
+                            IntegerSliderController(option, 0, 100, 1)
                         }
                         .build()
                     )
@@ -323,8 +319,7 @@ object VolubindConfig : SettxiFileConfig(
                         .binding(Binding.generic(
                             weatherVolume,
                             { weatherVolume },
-                            {
-                                    newValue: Int ->
+                            { newValue: Int ->
                                 run {
                                     val newFloat = newValue.toFloat() / 100
                                     weatherVolume = newValue
@@ -332,12 +327,13 @@ object VolubindConfig : SettxiFileConfig(
                                         SoundCategory.WEATHER,
                                         newFloat
                                     )
+                                    MinecraftClient.getInstance().options.write()
                                     weatherToggled = false
                                 }
                             }
                         ))
-                        .controller {
-                                option: Option<Int> -> IntegerSliderController(option, 0, 100, 1)
+                        .controller { option: Option<Int> ->
+                            IntegerSliderController(option, 0, 100, 1)
                         }
                         .build()
                     )
@@ -347,8 +343,7 @@ object VolubindConfig : SettxiFileConfig(
                         .binding(Binding.generic(
                             blocksVolume,
                             { blocksVolume },
-                            {
-                                    newValue: Int ->
+                            { newValue: Int ->
                                 run {
                                     val newFloat = newValue.toFloat() / 100
                                     blocksVolume = newValue
@@ -356,12 +351,13 @@ object VolubindConfig : SettxiFileConfig(
                                         SoundCategory.BLOCKS,
                                         newFloat
                                     )
+                                    MinecraftClient.getInstance().options.write()
                                     blocksToggled = false
                                 }
                             }
                         ))
-                        .controller {
-                                option: Option<Int> -> IntegerSliderController(option, 0, 100, 1)
+                        .controller { option: Option<Int> ->
+                            IntegerSliderController(option, 0, 100, 1)
                         }
                         .build()
                     )
@@ -371,8 +367,7 @@ object VolubindConfig : SettxiFileConfig(
                         .binding(Binding.generic(
                             hostileVolume,
                             { hostileVolume },
-                            {
-                                    newValue: Int ->
+                            { newValue: Int ->
                                 run {
                                     val newFloat = newValue.toFloat() / 100
                                     hostileVolume = newValue
@@ -380,12 +375,13 @@ object VolubindConfig : SettxiFileConfig(
                                         SoundCategory.HOSTILE,
                                         newFloat
                                     )
+                                    MinecraftClient.getInstance().options.write()
                                     hostileToggled = false
                                 }
                             }
                         ))
-                        .controller {
-                                option: Option<Int> -> IntegerSliderController(option, 0, 100, 1)
+                        .controller { option: Option<Int> ->
+                            IntegerSliderController(option, 0, 100, 1)
                         }
                         .build()
                     )
@@ -395,8 +391,7 @@ object VolubindConfig : SettxiFileConfig(
                         .binding(Binding.generic(
                             neutralVolume,
                             { neutralVolume },
-                            {
-                                    newValue: Int ->
+                            { newValue: Int ->
                                 run {
                                     val newFloat = newValue.toFloat() / 100
                                     neutralVolume = newValue
@@ -404,12 +399,13 @@ object VolubindConfig : SettxiFileConfig(
                                         SoundCategory.NEUTRAL,
                                         newFloat
                                     )
+                                    MinecraftClient.getInstance().options.write()
                                     neutralToggled = false
                                 }
                             }
                         ))
-                        .controller {
-                                option: Option<Int> -> IntegerSliderController(option, 0, 100, 1)
+                        .controller { option: Option<Int> ->
+                            IntegerSliderController(option, 0, 100, 1)
                         }
                         .build()
                     )
@@ -419,8 +415,7 @@ object VolubindConfig : SettxiFileConfig(
                         .binding(Binding.generic(
                             playersVolume,
                             { playersVolume },
-                            {
-                                    newValue: Int ->
+                            { newValue: Int ->
                                 run {
                                     val newFloat = newValue.toFloat() / 100
                                     playersVolume = newValue
@@ -428,12 +423,13 @@ object VolubindConfig : SettxiFileConfig(
                                         SoundCategory.PLAYERS,
                                         newFloat
                                     )
+                                    MinecraftClient.getInstance().options.write()
                                     playersToggled = false
                                 }
                             }
                         ))
-                        .controller {
-                                option: Option<Int> -> IntegerSliderController(option, 0, 100, 1)
+                        .controller { option: Option<Int> ->
+                            IntegerSliderController(option, 0, 100, 1)
                         }
                         .build()
                     )
@@ -443,8 +439,7 @@ object VolubindConfig : SettxiFileConfig(
                         .binding(Binding.generic(
                             ambientVolume,
                             { ambientVolume },
-                            {
-                                    newValue: Int ->
+                            { newValue: Int ->
                                 run {
                                     val newFloat = newValue.toFloat() / 100
                                     ambientVolume = newValue
@@ -452,12 +447,13 @@ object VolubindConfig : SettxiFileConfig(
                                         SoundCategory.AMBIENT,
                                         newFloat
                                     )
+                                    MinecraftClient.getInstance().options.write()
                                     ambientToggled = false
                                 }
                             }
                         ))
-                        .controller {
-                                option: Option<Int> -> IntegerSliderController(option, 0, 100, 1)
+                        .controller { option: Option<Int> ->
+                            IntegerSliderController(option, 0, 100, 1)
                         }
                         .build()
                     )
@@ -467,8 +463,7 @@ object VolubindConfig : SettxiFileConfig(
                         .binding(Binding.generic(
                             voiceVolume,
                             { voiceVolume },
-                            {
-                                    newValue: Int ->
+                            { newValue: Int ->
                                 run {
                                     val newFloat = newValue.toFloat() / 100
                                     voiceVolume = newValue
@@ -476,12 +471,13 @@ object VolubindConfig : SettxiFileConfig(
                                         SoundCategory.VOICE,
                                         newFloat
                                     )
+                                    MinecraftClient.getInstance().options.write()
                                     voiceToggled = false
                                 }
                             }
                         ))
-                        .controller {
-                                option: Option<Int> -> IntegerSliderController(option, 0, 100, 1)
+                        .controller { option: Option<Int> ->
+                            IntegerSliderController(option, 0, 100, 1)
                         }
                         .build()
                     )
@@ -497,12 +493,12 @@ object VolubindConfig : SettxiFileConfig(
                         .binding(Binding.generic(
                             toggledMaster,
                             { toggledMaster },
-                            {
-                                    newValue: Int -> toggledMaster = newValue
+                            { newValue: Int ->
+                                toggledMaster = newValue
                             }
                         ))
-                        .controller {
-                                option: Option<Int> -> IntegerSliderController(option, 0, 100, 1)
+                        .controller { option: Option<Int> ->
+                            IntegerSliderController(option, 0, 100, 1)
                         }
                         .build()
                     )
@@ -512,12 +508,12 @@ object VolubindConfig : SettxiFileConfig(
                         .binding(Binding.generic(
                             toggledMusic,
                             { toggledMusic },
-                            {
-                                    newValue: Int -> toggledMusic = newValue
+                            { newValue: Int ->
+                                toggledMusic = newValue
                             }
                         ))
-                        .controller {
-                                option: Option<Int> -> IntegerSliderController(option, 0, 100, 1)
+                        .controller { option: Option<Int> ->
+                            IntegerSliderController(option, 0, 100, 1)
                         }
                         .build()
                     )
@@ -527,12 +523,12 @@ object VolubindConfig : SettxiFileConfig(
                         .binding(Binding.generic(
                             toggledRecords,
                             { toggledRecords },
-                            {
-                                    newValue: Int -> toggledRecords = newValue
+                            { newValue: Int ->
+                                toggledRecords = newValue
                             }
                         ))
-                        .controller {
-                                option: Option<Int> -> IntegerSliderController(option, 0, 100, 1)
+                        .controller { option: Option<Int> ->
+                            IntegerSliderController(option, 0, 100, 1)
                         }
                         .build()
                     )
@@ -542,12 +538,12 @@ object VolubindConfig : SettxiFileConfig(
                         .binding(Binding.generic(
                             toggledWeather,
                             { toggledWeather },
-                            {
-                                    newValue: Int -> toggledWeather = newValue
+                            { newValue: Int ->
+                                toggledWeather = newValue
                             }
                         ))
-                        .controller {
-                                option: Option<Int> -> IntegerSliderController(option, 0, 100, 1)
+                        .controller { option: Option<Int> ->
+                            IntegerSliderController(option, 0, 100, 1)
                         }
                         .build()
                     )
@@ -557,12 +553,12 @@ object VolubindConfig : SettxiFileConfig(
                         .binding(Binding.generic(
                             toggledBlocks,
                             { toggledBlocks },
-                            {
-                                    newValue: Int -> toggledBlocks = newValue
+                            { newValue: Int ->
+                                toggledBlocks = newValue
                             }
                         ))
-                        .controller {
-                                option: Option<Int> -> IntegerSliderController(option, 0, 100, 1)
+                        .controller { option: Option<Int> ->
+                            IntegerSliderController(option, 0, 100, 1)
                         }
                         .build()
                     )
@@ -572,12 +568,12 @@ object VolubindConfig : SettxiFileConfig(
                         .binding(Binding.generic(
                             toggledHostile,
                             { toggledHostile },
-                            {
-                                    newValue: Int -> toggledHostile = newValue
+                            { newValue: Int ->
+                                toggledHostile = newValue
                             }
                         ))
-                        .controller {
-                                option: Option<Int> -> IntegerSliderController(option, 0, 100, 1)
+                        .controller { option: Option<Int> ->
+                            IntegerSliderController(option, 0, 100, 1)
                         }
                         .build()
                     )
@@ -587,12 +583,12 @@ object VolubindConfig : SettxiFileConfig(
                         .binding(Binding.generic(
                             toggledNeutral,
                             { toggledNeutral },
-                            {
-                                    newValue: Int -> toggledNeutral = newValue
+                            { newValue: Int ->
+                                toggledNeutral = newValue
                             }
                         ))
-                        .controller {
-                                option: Option<Int> -> IntegerSliderController(option, 0, 100, 1)
+                        .controller { option: Option<Int> ->
+                            IntegerSliderController(option, 0, 100, 1)
                         }
                         .build()
                     )
@@ -602,12 +598,12 @@ object VolubindConfig : SettxiFileConfig(
                         .binding(Binding.generic(
                             toggledPlayers,
                             { toggledPlayers },
-                            {
-                                    newValue: Int -> toggledPlayers = newValue
+                            { newValue: Int ->
+                                toggledPlayers = newValue
                             }
                         ))
-                        .controller {
-                                option: Option<Int> -> IntegerSliderController(option, 0, 100, 1)
+                        .controller { option: Option<Int> ->
+                            IntegerSliderController(option, 0, 100, 1)
                         }
                         .build()
                     )
@@ -617,12 +613,12 @@ object VolubindConfig : SettxiFileConfig(
                         .binding(Binding.generic(
                             toggledAmbient,
                             { toggledAmbient },
-                            {
-                                    newValue: Int -> toggledAmbient = newValue
+                            { newValue: Int ->
+                                toggledAmbient = newValue
                             }
                         ))
-                        .controller {
-                                option: Option<Int> -> IntegerSliderController(option, 0, 100, 1)
+                        .controller { option: Option<Int> ->
+                            IntegerSliderController(option, 0, 100, 1)
                         }
                         .build()
                     )
@@ -632,12 +628,12 @@ object VolubindConfig : SettxiFileConfig(
                         .binding(Binding.generic(
                             toggledVoice,
                             { toggledVoice },
-                            {
-                                    newValue: Int -> toggledVoice = newValue
+                            { newValue: Int ->
+                                toggledVoice = newValue
                             }
                         ))
-                        .controller {
-                                option: Option<Int> -> IntegerSliderController(option, 0, 100, 1)
+                        .controller { option: Option<Int> ->
+                            IntegerSliderController(option, 0, 100, 1)
                         }
                         .build()
                     )
