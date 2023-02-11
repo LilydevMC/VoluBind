@@ -40,15 +40,15 @@
 			},
 			{
 				"id": "minecraft",
-				"versions": ">=1.19.2"
+				"versions": "1.19.2"
 			},
 			{
 				"id": "qkl",
-				"versions": "0.1.2-MODFEST"
+				"versions": ">=1.0.0"
 			},
 			{
 				"id": "yet-another-config-lib",
-				"versions": ">=1.5.0"
+				"versions": ">=1.6.0"
 			}
 		]
 	},

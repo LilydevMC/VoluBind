@@ -40,7 +40,7 @@ dependencies {
 	modImplementation libs.quilted.fabric.api
 	// modImplementation libs.bundles.quilted.fabric.api // If you wish to use Fabric API's deprecated modules, you can replace the above line with this one
 
-	modImplementation libs.quilt.language.kotlin
+	modImplementation libs.qkl
 
 	modImplementation libs.modmenu
 	modImplementation libs.yetanotherconfiglib
