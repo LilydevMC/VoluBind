@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "volubind",
+  "version": "${version}",
+
+  "name": "VoluBind",
+  "description": "Toggle your volume with keybinds!",
+  "authors": [
+    "jadelily18"
+  ],
+  "contact": {
+    "homepage": "https://lilydev.com/",
+    "issues": "https://github.com/LilydevMC/VoluBind/issues",
+    "sources": "https://github.com/LilydevMC/VoluBind"
+  },
+
+  "license": "LGPL-3.0",
+  "icon": "assets/volubind/icon.png",
+
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "com.lilydev.volubind.VolubindClient"
+      }
+    ]
+  },
+  "mixins": [
+    "volubind.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric-api": "*",
+    "minecraft": "~1.20",
+    "java": ">=17",
+    "fabric-language-kotlin": "*"
+  },
+  "suggests": {
+    "another-mod": "modmenu"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.lilydev.com",
+        "modmenu.kofi": "https://ko-fi.com/jadelily"
+      }
+    }
+  }
+}
