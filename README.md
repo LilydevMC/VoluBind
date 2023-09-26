@@ -1,3 +1,5 @@
+# This project is outdated. New version for Fabric available [here](https://github.com/LilydevMC/VoluBind)!!
+
 # VoluBind
 
 [![Modrinth Downloads](https://img.shields.io/modrinth/dt/volubind?color=00AF5C&label=downloads&style=flat-square&logo=modrinth)](https://modrinth.com/mod/volubind)
