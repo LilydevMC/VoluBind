@@ -1,0 +1,15 @@
+{
+	"text.config.volubind.title": "VoluBind",
+	"text.config.volubind.section.volumeSection": [
+		{ "text": "Main Volume", "color": "#9863d6" }
+	],
+	"text.config.volubind.section.volumeToggledSection": [
+		{ "text": "Toggled Volume", "color": "#9863d6" }
+	],
+	"text.config.volubind.option.masterVolume": "Master Volume",
+	"text.config.volubind.option.masterVolumeToggled": "Master Volume (Toggled)",
+
+	"volubind.screen.sound_selector.label": "Hello! This is a selection screen! Where do you wanna go?",
+	"volubind.screen.sound_selector.volubind": "VoluBind Sound Options...",
+	"volubind.screen.sound_selector.vanilla": "Vanilla Sound Options..."
+}
