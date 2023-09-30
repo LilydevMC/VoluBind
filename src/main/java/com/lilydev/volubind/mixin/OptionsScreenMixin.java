@@ -1,9 +1,6 @@
 package com.lilydev.volubind.mixin;
 
-import com.lilydev.volubind.VolubindClient;
-import com.lilydev.volubind.config.ConfigScreenWrapper;
 import com.lilydev.volubind.config.SoundOptionsSelectorScreen;
-import com.lilydev.volubind.config.VolubindConfig;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.option.*;
 import net.minecraft.client.gui.screen.pack.PackScreen;
