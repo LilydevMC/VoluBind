@@ -8,7 +8,7 @@
                         <label>
                             <text translate="true">volubind.screen.sound_selector.label</text>
                             <margins>
-                                <bottom>8</bottom>
+                                <bottom>14</bottom>
                             </margins>
                             <sizing>
                                 <horizontal method="fixed">220</horizontal>

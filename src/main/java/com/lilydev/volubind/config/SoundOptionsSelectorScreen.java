@@ -37,6 +37,12 @@ public class SoundOptionsSelectorScreen extends BaseUIModelScreen<FlowLayout> {
             this.client.setScreen(parent);
         });
 
-        rootComponent.surface(Surface.OPTIONS_BACKGROUND);
+        assert this.client != null;
+        if (this.client.world == null) {
+            rootComponent.surface(Surface.OPTIONS_BACKGROUND);
+        } else {
+            rootComponent.surface(Surface.VANILLA_TRANSLUCENT);
+        }
+
     }
 }
