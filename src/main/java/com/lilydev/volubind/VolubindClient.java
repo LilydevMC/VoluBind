@@ -2,13 +2,10 @@ package com.lilydev.volubind;
 
 import com.lilydev.volubind.config.VolubindConfig;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.sound.SoundCategory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.function.Consumer;
 
 
 public class VolubindClient implements ClientModInitializer {

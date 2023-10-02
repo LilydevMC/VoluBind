@@ -12,16 +12,6 @@ base {
 	archivesName = project.archives_base_name
 }
 
-loom {
-	splitEnvironmentSourceSets()
-
-	mods {
-		"${archives_base_name}" {
-			sourceSet sourceSets.main
-		}
-	}
-}
-
 repositories {
 	// owo
 	maven {
