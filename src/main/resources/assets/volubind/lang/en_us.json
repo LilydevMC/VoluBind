@@ -7,7 +7,29 @@
 		{ "text": "Toggled Volume", "color": "#9a6cc4" }
 	],
 	"text.config.volubind.option.masterVolume": "Master Volume",
-	"text.config.volubind.option.masterVolumeToggled": "Master Volume (Toggled)",
+	"text.config.volubind.option.volumeToggled.masterVolumeToggled": "Master Volume (Toggled)",
+	"text.config.volubind.option.musicVolume": "Music Volume",
+	"text.config.volubind.option.volumeToggled.musicVolumeToggled": "Music Volume (Toggled)",
+	"text.config.volubind.option.musicBlockVolume": "Jukebox/Note Block Volume",
+	"text.config.volubind.option.volumeToggled.musicBlockVolumeToggled": "Jukebox/Note Block Volume (Toggled)",
+	"text.config.volubind.option.weatherVolume": "Weather Volume",
+	"text.config.volubind.option.volumeToggled.weatherVolumeToggled": "Weather Volume (Toggled)",
+	"text.config.volubind.option.blockVolume": "Block Volume",
+	"text.config.volubind.option.volumeToggled.blockVolumeToggled": "Block Volume (Toggled)",
+	"text.config.volubind.option.hostileVolume": "Hostile Creature Volume",
+	"text.config.volubind.option.volumeToggled.hostileVolumeToggled": "Hostile Creature Volume (Toggled)",
+	"text.config.volubind.option.friendlyVolume": "Friendly Creature Volume",
+	"text.config.volubind.option.volumeToggled.friendlyVolumeToggled": "Friendly Creature Volume (Toggled)",
+	"text.config.volubind.option.playerVolume": "Player Volume",
+	"text.config.volubind.option.volumeToggled.playerVolumeToggled": "Player Volume (Toggled)",
+	"text.config.volubind.option.ambientVolume": "Ambient/Environment Volume",
+	"text.config.volubind.option.volumeToggled.ambientVolumeToggled": "Ambient/Environment Volume (Toggled)",
+	"text.config.volubind.option.voiceVolume": "Voice/Speech Volume",
+	"text.config.volubind.option.volumeToggled.voiceVolumeToggled": "Voice/Speech Volume (Toggled)",
+
+	"text.config.volubind.category.volumeToggled": "Toggled Volume",
+
+	"text.config.volubind.option.volumeToggled.masterToggled": "Is Master Toggled",
 
 	"volubind.screen.sound_selector.label": [
 		"",
