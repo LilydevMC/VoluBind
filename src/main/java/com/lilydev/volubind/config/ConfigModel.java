@@ -43,6 +43,24 @@ public class ConfigModel {
 
     @ExcludeFromScreen
     public boolean masterToggled = false;
+    @ExcludeFromScreen
+    public boolean musicToggled = false;
+    @ExcludeFromScreen
+    public boolean musicBlockToggled = false;
+    @ExcludeFromScreen
+    public boolean weatherToggled = false;
+    @ExcludeFromScreen
+    public boolean blockToggled = false;
+    @ExcludeFromScreen
+    public boolean hostileToggled = false;
+    @ExcludeFromScreen
+    public boolean friendlyToggled = false;
+    @ExcludeFromScreen
+    public boolean playerToggled = false;
+    @ExcludeFromScreen
+    public boolean ambientToggled = false;
+    @ExcludeFromScreen
+    public boolean voiceToggled = false;
 
     public static class VolumeToggled {
         @Hook
@@ -50,30 +68,30 @@ public class ConfigModel {
         public int masterVolumeToggled = 0;
         @Hook
         @RangeConstraint(min = 0, max = 100)
-        public int musicVolumeToggled = 100;
+        public int musicVolumeToggled = 0;
         @Hook
         @RangeConstraint(min = 0, max = 100)
-        public int musicBlockVolumeToggled = 100;
+        public int musicBlockVolumeToggled = 0;
         @Hook
         @RangeConstraint(min = 0, max = 100)
-        public int weatherVolumeToggled = 100;
+        public int weatherVolumeToggled = 0;
         @Hook
         @RangeConstraint(min = 0, max = 100)
-        public int blockVolumeToggled = 100;
+        public int blockVolumeToggled = 0;
         @Hook
         @RangeConstraint(min = 0, max = 100)
-        public int hostileVolumeToggled = 100;
+        public int hostileVolumeToggled = 0;
         @Hook
         @RangeConstraint(min = 0, max = 100)
-        public int friendlyVolumeToggled = 100;
+        public int friendlyVolumeToggled = 0;
         @Hook
         @RangeConstraint(min = 0, max = 100)
-        public int playerVolumeToggled = 100;
+        public int playerVolumeToggled = 0;
         @Hook
         @RangeConstraint(min = 0, max = 100)
-        public int ambientVolumeToggled = 100;
+        public int ambientVolumeToggled = 0;
         @Hook
         @RangeConstraint(min = 0, max = 100)
-        public int voiceVolumeToggled = 100;
+        public int voiceVolumeToggled = 0;
     }
 }

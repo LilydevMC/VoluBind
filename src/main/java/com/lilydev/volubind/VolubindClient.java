@@ -1,6 +1,6 @@
 package com.lilydev.volubind;
 
-import com.lilydev.volubind.config.ConfigConsumers;
+import com.lilydev.volubind.config.ConfigSubscribers;
 import com.lilydev.volubind.config.VolubindConfig;
 import net.fabricmc.api.ClientModInitializer;
 import org.slf4j.Logger;
@@ -19,7 +19,7 @@ public class VolubindClient implements ClientModInitializer {
     public void onInitializeClient() {
         LOGGER.info("test! " + MOD_NAME);
 
-        ConfigConsumers.register();
+        ConfigSubscribers.register();
 
     }
 }
