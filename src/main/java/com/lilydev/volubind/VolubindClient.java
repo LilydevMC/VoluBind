@@ -19,9 +19,8 @@ public class VolubindClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         ConfigSubscribers.register();
-
         VolumeControl.init();
 
-        ClientTickEvents.END_CLIENT_TICK.register(VolumeControl::checkKeyPresses);
+        ClientTickEvents.END_CLIENT_TICK.register(VolumeControl::processKeyPress);
     }
 }

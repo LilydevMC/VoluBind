@@ -2,6 +2,7 @@ package com.lilydev.volubind;
 
 import com.lilydev.volubind.config.ConfigScreenWrapper;
 import com.lilydev.volubind.config.VolubindConfig;
+import com.lilydev.volubind.util.Utils;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
@@ -11,18 +12,20 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 import org.lwjgl.glfw.GLFW;
 
+import java.util.EnumSet;
+
 public class VolumeControl {
     private static KeyBinding openGui;
-    private static KeyBinding toggleMaster;
-    private static KeyBinding toggleMusic;
-    private static KeyBinding toggleMusicBlock;
-    private static KeyBinding toggleWeather;
-    private static KeyBinding toggleBlock;
-    private static KeyBinding toggleHostile;
-    private static KeyBinding toggleFriendly;
-    private static KeyBinding togglePlayer;
-    private static KeyBinding toggleAmbient;
-    private static KeyBinding toggleVoice;
+    public static KeyBinding toggleMaster;
+    public static KeyBinding toggleMusic;
+    public static KeyBinding toggleMusicBlock;
+    public static KeyBinding toggleWeather;
+    public static KeyBinding toggleBlock;
+    public static KeyBinding toggleHostile;
+    public static KeyBinding toggleFriendly;
+    public static KeyBinding togglePlayer;
+    public static KeyBinding toggleAmbient;
+    public static KeyBinding toggleVoice;
 
 
     // Translation keys have extra numbers because the Controls GUI orders them lexicographically
@@ -46,7 +49,7 @@ public class VolumeControl {
         ));
     }
 
-    public static void checkKeyPresses(MinecraftClient client) {
+    public static void processKeyPress(MinecraftClient client) {
         VolubindConfig config = VolubindClient.CONFIG;
         assert client.player != null;
 
@@ -54,19 +57,28 @@ public class VolumeControl {
             client.setScreen(new ConfigScreenWrapper(client.currentScreen));
         }
 
-        while (toggleMaster.wasPressed()) {
-            if (config.masterToggled()) {
-                double newVolume = volumeIntToDouble(config.masterVolume());
-                getSoundVolumeOption(client, SoundCategory.MASTER).setValue(newVolume);
-                client.player.sendMessage(Text.literal("Master Volume set to: " + newVolume + "%"));
-            } else {
-                double newVolume = volumeIntToDouble(config.volumeToggled.masterVolumeToggled());
-                getSoundVolumeOption(client, SoundCategory.MASTER).setValue(newVolume);
-                client.player.sendMessage(Text.literal("Master Volume set to: " + newVolume + "%"));
-            }
-            config.masterToggled(!config.masterToggled());
-        }
+        EnumSet.allOf(SoundCategory.class)
+                .forEach(category -> {
+                    while (Utils.getKeyBindingByCategory(category).wasPressed()) {
+                        boolean isToggled = Utils.getToggleSupplierByCategory(config, category).get();
 
+                        int newVolInt = Utils.getVolumeSupplierByCategory(
+                                config,
+                                category,
+                                isToggled ? Utils.ConfigVolumeType.UNTOGGLED : Utils.ConfigVolumeType.TOGGLED
+                        ).get();
+                        double newVolDouble = volumeIntToDouble(newVolInt);
+                        getSoundVolumeOption(client, category).setValue(newVolDouble);
+
+                        // Should be translated
+                        client.player.sendMessage(Text.literal(
+                                "Volume '" + category + "' set to: " + newVolInt + "%"
+                        ));
+
+                        Utils.getToggleConsumerByCategory(config, category)
+                                .accept(!isToggled);
+                    }
+                });
     }
 
     private static SimpleOption<Double> getSoundVolumeOption(MinecraftClient client, SoundCategory category) {

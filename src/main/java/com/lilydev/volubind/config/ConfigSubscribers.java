@@ -9,7 +9,7 @@ import java.util.EnumSet;
 
 import static com.lilydev.volubind.util.Utils.ConfigVolumeType;
 import static com.lilydev.volubind.util.Utils.getSubscriberByCategory;
-import static com.lilydev.volubind.util.Utils.getToggleGetterByCategory;
+import static com.lilydev.volubind.util.Utils.getToggleSupplierByCategory;
 
 public class ConfigSubscribers {
 
@@ -30,11 +30,11 @@ public class ConfigSubscribers {
                 logVolumeChange(category, volType, vol);
             }
             if (volType == ConfigVolumeType.UNTOGGLED) {
-                if (!getToggleGetterByCategory(config, category).get()) {
+                if (!getToggleSupplierByCategory(config, category).get()) {
                     client.options.getSoundVolumeOption(category).setValue(vol.doubleValue() / 100);
                 }
             } else {
-                if (getToggleGetterByCategory(config, category).get()) {
+                if (getToggleSupplierByCategory(config, category).get()) {
                     client.options.getSoundVolumeOption(category).setValue(vol.doubleValue() / 100);
                 }
             }
@@ -45,7 +45,7 @@ public class ConfigSubscribers {
         VolubindClient.LOGGER.info(
                 "Volume '" + category + "'" +
                 (volType == ConfigVolumeType.TOGGLED ? " (Toggled)" : "") +
-                " set to: " + newVolume
+                " set to: " + newVolume + "%"
         );
     }
 
