@@ -30,17 +30,17 @@ public class VolumeControl {
 
     // Translation keys have extra numbers because the Controls GUI orders them lexicographically
     public static void init() {
-        openGui           = buildKeybinding("key.volubind.00.openGui");
-        toggleMaster      = buildKeybinding("key.volubind.01.toggleMaster");
-        toggleMusic       = buildKeybinding("key.volubind.02.toggleMusic");
-        toggleMusicBlock  = buildKeybinding("key.volubind.03.toggleMusicBlock");
-        toggleWeather     = buildKeybinding("key.volubind.04.toggleWeather");
-        toggleBlock       = buildKeybinding("key.volubind.05.toggleBlock");
-        toggleHostile     = buildKeybinding("key.volubind.06.toggleHostile");
-        toggleFriendly    = buildKeybinding("key.volubind.07.toggleFriendly");
-        togglePlayer      = buildKeybinding("key.volubind.08.togglePlayer");
-        toggleAmbient     = buildKeybinding("key.volubind.09.toggleAmbient");
-        toggleVoice       = buildKeybinding("key.volubind.10.toggleVoice");
+        openGui           = buildKeybinding("volubind.key.00.openGui");
+        toggleMaster      = buildKeybinding("volubind.key.01.toggleMaster");
+        toggleMusic       = buildKeybinding("volubind.key.02.toggleMusic");
+        toggleMusicBlock  = buildKeybinding("volubind.key.03.toggleMusicBlock");
+        toggleWeather     = buildKeybinding("volubind.key.04.toggleWeather");
+        toggleBlock       = buildKeybinding("volubind.key.05.toggleBlock");
+        toggleHostile     = buildKeybinding("volubind.key.06.toggleHostile");
+        toggleFriendly    = buildKeybinding("volubind.key.07.toggleFriendly");
+        togglePlayer      = buildKeybinding("volubind.key.08.togglePlayer");
+        toggleAmbient     = buildKeybinding("volubind.key.09.toggleAmbient");
+        toggleVoice       = buildKeybinding("volubind.key.10.toggleVoice");
     }
 
     public static void initVolumeOptions(MinecraftClient client) {
@@ -62,7 +62,7 @@ public class VolumeControl {
 
     private static KeyBinding buildKeybinding(String translationKey) {
         return KeyBindingHelper.registerKeyBinding(new KeyBinding(
-                translationKey, InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.volubind.category"
+                translationKey, InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "volubind.key.category"
         ));
     }
 
@@ -89,9 +89,8 @@ public class VolumeControl {
                         double newVolDouble = volumeIntToDouble(newVolInt);
                         getSoundVolumeOption(client, category).setValue(newVolDouble);
 
-                        // TODO: Should be translated
-                        client.player.sendMessage(Text.literal(
-                                "Volume '" + category + "' set to: " + newVolInt + "%"
+                        client.player.sendMessage(Text.translatable(
+                                Utils.getTranslationStringByCategory(category), newVolInt
                         ));
 
                         Utils.getToggleConsumerByCategory(config, category)

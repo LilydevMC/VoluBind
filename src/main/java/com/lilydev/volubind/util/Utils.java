@@ -8,6 +8,7 @@ import net.minecraft.sound.SoundCategory;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+// This class could probably use a lot of cleanup D:
 public class Utils {
     public enum ConfigVolumeType {
         UNTOGGLED,
@@ -112,6 +113,20 @@ public class Utils {
         };
     }
 
+    public static String getTranslationStringByCategory(SoundCategory category) {
+        return switch (category) {
+            case MASTER   -> "volubind.message.changeSound.master";
+            case MUSIC    -> "volubind.message.changeSound.music";
+            case RECORDS  -> "volubind.message.changeSound.records";
+            case WEATHER  -> "volubind.message.changeSound.weather";
+            case BLOCKS   -> "volubind.message.changeSound.blocks";
+            case HOSTILE  -> "volubind.message.changeSound.hostile";
+            case NEUTRAL  -> "volubind.message.changeSound.neutral";
+            case PLAYERS  -> "volubind.message.changeSound.players";
+            case AMBIENT  -> "volubind.message.changeSound.ambient";
+            case VOICE    -> "volubind.message.changeSound.voice";
+        };
+    }
 
     public static KeyBinding getKeyBindingByCategory(SoundCategory category) {
         return switch (category) {

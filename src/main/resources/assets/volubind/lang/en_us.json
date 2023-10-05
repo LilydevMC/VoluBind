@@ -30,6 +30,147 @@
 	"text.config.volubind.option.voiceVolume": "Voice/Speech Volume",
 	"text.config.volubind.option.volumeToggled.voiceVolumeToggled": "Voice/Speech Volume (Toggled)",
 
+	"volubind.message.changeSound.master": [
+		"",
+		{
+			"translate": "soundCategory.master"
+		},
+		{
+			"text": " set to: ",
+			"italic": true
+		},
+		{
+			"index": 0
+		},
+		"%"
+	],
+	"volubind.message.changeSound.music": [
+		"",
+		{
+			"translate": "soundCategory.music"
+		},
+		{
+			"text": " set to: ",
+			"italic": true
+		},
+		{
+			"index": 0
+		},
+		"%"
+	],
+	"volubind.message.changeSound.records": [
+		"",
+		{
+			"translate": "soundCategory.records"
+		},
+		{
+			"text": " set to: ",
+			"italic": true
+		},
+		{
+			"index": 0
+		},
+		"%"
+	],
+	"volubind.message.changeSound.weather": [
+		"",
+		{
+			"translate": "soundCategory.weather"
+		},
+		{
+			"text": " set to: ",
+			"italic": true
+		},
+		{
+			"index": 0
+		},
+		"%"
+	],
+	"volubind.message.changeSound.blocks": [
+		"",
+		{
+			"translate": "soundCategory.blocks"
+		},
+		{
+			"text": " set to: ",
+			"italic": true
+		},
+		{
+			"index": 0
+		},
+		"%"
+	],
+	"volubind.message.changeSound.hostile": [
+		"",
+		{
+			"translate": "soundCategory.hostile"
+		},
+		{
+			"text": " set to: ",
+			"italic": true
+		},
+		{
+			"index": 0
+		},
+		"%"
+	],
+	"volubind.message.changeSound.neutral": [
+		"",
+		{
+			"translate": "soundCategory.neutral"
+		},
+		{
+			"text": " set to: ",
+			"italic": true
+		},
+		{
+			"index": 0
+		},
+		"%"
+	],
+	"volubind.message.changeSound.players": [
+		"",
+		{
+			"translate": "soundCategory.players"
+		},
+		{
+			"text": " set to: ",
+			"italic": true
+		},
+		{
+			"index": 0
+		},
+		"%"
+	],
+	"volubind.message.changeSound.ambient": [
+		"",
+		{
+			"translate": "soundCategory.ambient"
+		},
+		{
+			"text": " set to: ",
+			"italic": true
+		},
+		{
+			"index": 0
+		},
+		"%"
+	],
+	"volubind.message.changeSound.voice": [
+		"",
+		{
+			"translate": "soundCategory.voice"
+		},
+		{
+			"text": " set to: ",
+			"italic": true
+		},
+		{
+			"index": 0
+		},
+		"%"
+	],
+
 	"volubind.screen.sound_selector.label": [
 		"",
 		{
@@ -49,6 +190,7 @@
 			"italic": true
 		}
 	],
+
 	"volubind.screen.sound_selector.volubind": "VoluBind Sound Options...",
 	"volubind.screen.sound_selector.vanilla": "Vanilla Sound Options..."
 }
