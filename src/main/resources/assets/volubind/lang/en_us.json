@@ -30,6 +30,71 @@
 	"text.config.volubind.option.voiceVolume": "Voice/Speech Volume",
 	"text.config.volubind.option.volumeToggled.voiceVolumeToggled": "Voice/Speech Volume (Toggled)",
 
+	"volubind.key.category": "VoluBind",
+
+	"volubind.key.00.openGui": "Open Config",
+	"volubind.key.01.toggleMaster": [
+		"Toggle ",
+		{
+			"translate": "soundCategory.master"
+		}
+	],
+	"volubind.key.02.toggleMusic": [
+		"Toggle ",
+		{
+			"translate": "soundCategory.music"
+		}
+	],
+	"volubind.key.03.toggleMusicBlock": [
+		"Toggle ",
+		{
+			"translate": "soundCategory.record"
+		}
+	],
+	"volubind.key.04.toggleWeather": [
+		"Toggle ",
+		{
+			"translate": "soundCategory.weather"
+		}
+	],
+	"volubind.key.05.toggleBlock": [
+		"Toggle ",
+		{
+			"translate": "soundCategory.block"
+		}
+	],
+	"volubind.key.06.toggleHostile": [
+		"Toggle ",
+		{
+			"translate": "soundCategory.hostile"
+		}
+	],
+	"volubind.key.07.toggleFriendly": [
+		"Toggle ",
+		{
+			"translate": "soundCategory.neutral"
+		}
+	],
+	"volubind.key.08.togglePlayer": [
+		"Toggle ",
+		{
+			"translate": "soundCategory.player"
+		}
+	],
+	"volubind.key.09.toggleAmbient": [
+		"Toggle ",
+		{
+			"translate": "soundCategory.ambient"
+		}
+	],
+	"volubind.key.10.toggleVoice": [
+		"Toggle ",
+		{
+			"translate": "soundCategory.voice"
+		}
+	],
+
+
 	"volubind.message.changeSound.master": [
 		"",
 		{
