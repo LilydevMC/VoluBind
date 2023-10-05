@@ -1,11 +1,14 @@
 {
 	"text.config.volubind.title": "VoluBind",
-	"text.config.volubind.section.volumeSection": [
-		{ "text": "Main Volume", "color": "#9a6cc4" }
-	],
-	"text.config.volubind.section.volumeToggledSection": [
-		{ "text": "Toggled Volume", "color": "#9a6cc4" }
-	],
+
+	"text.config.volubind.section.general": "General",
+	"text.config.volubind.section.volumeControl": "Volume Control",
+
+	"text.config.volubind.option.sendChatMessages": "Send Chat Messages?",
+	"text.config.volubind.option.logVolumeChange": "Log Volume Change?",
+
+	"text.config.volubind.category.volumeToggled": "Toggled Volume",
+
 	"text.config.volubind.option.masterVolume": "Master Volume",
 	"text.config.volubind.option.volumeToggled.masterVolumeToggled": "Master Volume (Toggled)",
 	"text.config.volubind.option.musicVolume": "Music Volume",
@@ -26,10 +29,6 @@
 	"text.config.volubind.option.volumeToggled.ambientVolumeToggled": "Ambient/Environment Volume (Toggled)",
 	"text.config.volubind.option.voiceVolume": "Voice/Speech Volume",
 	"text.config.volubind.option.volumeToggled.voiceVolumeToggled": "Voice/Speech Volume (Toggled)",
-
-	"text.config.volubind.category.volumeToggled": "Toggled Volume",
-
-	"text.config.volubind.option.volumeToggled.masterToggled": "Is Master Toggled",
 
 	"volubind.screen.sound_selector.label": [
 		"",

@@ -7,6 +7,13 @@ import com.lilydev.volubind.VolubindClient;
 @Modmenu(modId = VolubindClient.MOD_ID)
 @Config(name = "volubind", wrapperName = "VolubindConfig")
 public class ConfigModel {
+
+    @SectionHeader("general")
+    public boolean sendChatMessages = true;
+    public boolean logVolumeChange = false;
+
+    @SectionHeader("volumeControl")
+
     @Hook
     @RangeConstraint(min = 0, max = 100)
     public int masterVolume = 100;
