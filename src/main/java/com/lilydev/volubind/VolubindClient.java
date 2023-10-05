@@ -3,6 +3,7 @@ package com.lilydev.volubind;
 import com.lilydev.volubind.config.ConfigSubscribers;
 import com.lilydev.volubind.config.VolubindConfig;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +22,8 @@ public class VolubindClient implements ClientModInitializer {
         ConfigSubscribers.register();
         VolumeControl.init();
 
+        ClientLifecycleEvents.CLIENT_STARTED.register(VolumeControl::initVolumeOptions);
         ClientTickEvents.END_CLIENT_TICK.register(VolumeControl::processKeyPress);
+
     }
 }

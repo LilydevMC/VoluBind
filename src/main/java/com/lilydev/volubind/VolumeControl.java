@@ -43,6 +43,23 @@ public class VolumeControl {
         toggleVoice       = buildKeybinding("key.volubind.10.toggleVoice");
     }
 
+    public static void initVolumeOptions(MinecraftClient client) {
+        VolubindConfig config = VolubindClient.CONFIG;
+        EnumSet.allOf(SoundCategory.class)
+                .forEach(category -> {
+                    boolean isToggled = Utils.getToggleSupplierByCategory(config, category).get();
+
+                    int newVolInt = Utils.getVolumeSupplierByCategory(
+                            config,
+                            category,
+                            isToggled ? Utils.ConfigVolumeType.TOGGLED : Utils.ConfigVolumeType.UNTOGGLED
+                    ).get();
+                    double newVolDouble = volumeIntToDouble(newVolInt);
+
+                    getSoundVolumeOption(client, category).setValue(newVolDouble);
+                });
+    }
+
     private static KeyBinding buildKeybinding(String translationKey) {
         return KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 translationKey, InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.volubind.category"
@@ -57,6 +74,8 @@ public class VolumeControl {
             client.setScreen(new ConfigScreenWrapper(client.currentScreen));
         }
 
+        // Not entirely sure if this presents performance issues, but it seems
+        // fine for now and is a lot cleaner than previous iterations
         EnumSet.allOf(SoundCategory.class)
                 .forEach(category -> {
                     while (Utils.getKeyBindingByCategory(category).wasPressed()) {
@@ -70,7 +89,7 @@ public class VolumeControl {
                         double newVolDouble = volumeIntToDouble(newVolInt);
                         getSoundVolumeOption(client, category).setValue(newVolDouble);
 
-                        // Should be translated
+                        // TODO: Should be translated
                         client.player.sendMessage(Text.literal(
                                 "Volume '" + category + "' set to: " + newVolInt + "%"
                         ));
