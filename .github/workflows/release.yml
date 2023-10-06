@@ -10,6 +10,7 @@ on:
         required: true
 jobs:
   release:
+    permissions: write-all
     strategy:
       matrix:
         # Use these Java versions
