@@ -20,7 +20,7 @@ dependency_type = "required"
 
 [github]
 repo_owner = "LilydevMC"
-repo_name = "mrpack-dist-test"
+repo_name = "VoluBind"
 
 
 [discord]
