@@ -10,12 +10,13 @@ jobs:
       MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
       WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
     steps:
-      - name: Download Peony from GH Releases
-        run: wget "https://github.com/LilydevMC/Peony/releases/download/0.2.0-223e662/peony_Linux-x86_64.tar.gz"
-      - name: Unzip Peony
-        run: tar xvf peony_Linux-x86_64.tar.gz
-      - run: chmod +x ./peony
+      - name: Install Peony from git repository
+        uses: baptiste0928/cargo-install@v2
+        with:
+          crate: peony
+          git: https://github.com/LilydevMC/Peony
+          tag: 0.2.0-223e662
       - name: Checkout Repository Files
         uses: actions/checkout@v4
       - name: Run release
-        run: ./peony mod -d
+        run: peony mod -d
