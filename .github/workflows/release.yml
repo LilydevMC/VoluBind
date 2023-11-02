@@ -1,0 +1,29 @@
+name: Release
+on: workflow_dispatch
+
+jobs:
+  peony_release:
+    runs-on: ubuntu-latest
+    name: Release VoluBind
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+      WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+      REPO_USER: ${{ secrets.MAVEN_USERNAME }}
+      REPO_TOKEN: ${{ secrets.MAVEN_PASSWORD }}
+    steps:
+      - name: Setup Java 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+      - name: Install Peony from git repository
+        uses: baptiste0928/cargo-install@v2
+        with:
+          crate: peony
+          git: https://github.com/LilydevMC/Peony
+          tag: 0.2.0-223e662
+      - name: Checkout Repository Files
+        uses: actions/checkout@v4
+      - name: Run release
+        run: peony mod -d --gradle-args="build publish"
