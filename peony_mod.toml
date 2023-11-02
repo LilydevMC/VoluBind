@@ -7,7 +7,7 @@ version_alias = "3.0.0"
 
 
 [modrinth]
-project_id = "MaJsLWB4"
+project_id = "kfEow3K7"
 
 [[modrinth.dependency]]
 project_id = "ccKDOlHs"
