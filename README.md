@@ -7,6 +7,12 @@
 
 Toggle your volume with keybindings!
 
+With VoluBind, you can toggle your volume from its normal value to a
+custom value with a simple keybinding!
+
+It is highly suggested that you use VoluBind's own volume menu instead of the
+vanilla one, but this is left in for compatibility reasons.
+
 
 ### Releases
 
