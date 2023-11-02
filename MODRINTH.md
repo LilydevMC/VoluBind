@@ -13,10 +13,10 @@ It is highly suggested that you use VoluBind's own volume menu instead of the
 vanilla one, but this is left in for compatibility reasons.
 
 
-### Releases
+### Dependencies
 
-As of version 3.0.0, VoluBind versions are released using
-[Peony](https://github.com/LilydevMC/Peony).
+VoluBind requires both [Fabric API](https://modrinth.com/mod/fabric-api)
+and the wonderful [owo-lib](https://modrinth.com/mod/owo-lib).
 
 ### License
 
