@@ -2,7 +2,7 @@ name: Release
 on: workflow_dispatch
 
 jobs:
-  run_mrpack_distributor:
+  peony_release:
     runs-on: ubuntu-latest
     name: Release on Modrinth & GitHub Releases
     env:
@@ -10,6 +10,11 @@ jobs:
       MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
       WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
     steps:
+      - name: Setup Java 17
+        uses: setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
       - name: Install Peony from git repository
         uses: baptiste0928/cargo-install@v2
         with:
