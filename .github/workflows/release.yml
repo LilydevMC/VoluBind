@@ -4,7 +4,7 @@ on: workflow_dispatch
 jobs:
   peony_release:
     runs-on: ubuntu-latest
-    name: Release on Modrinth & GitHub Releases
+    name: Release VoluBind
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
