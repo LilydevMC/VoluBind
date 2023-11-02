@@ -20,4 +20,4 @@ and the wonderful [owo-lib](https://modrinth.com/mod/owo-lib).
 
 ### License
 
-Licensed under [GNU Lesser General Public License v3.0](/LICENSE).
+Licensed under [GNU Lesser General Public License v3.0](https://github.com/LilydevMC/VoluBind/blob/1.20/LICENSE).
