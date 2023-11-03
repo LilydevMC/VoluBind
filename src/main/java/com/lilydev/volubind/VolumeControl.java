@@ -89,9 +89,11 @@ public class VolumeControl {
                         double newVolDouble = volumeIntToDouble(newVolInt);
                         getSoundVolumeOption(client, category).setValue(newVolDouble);
 
-                        client.player.sendMessage(Text.translatable(
+                        if (config.sendChatMessages()) {
+                            client.player.sendMessage(Text.translatable(
                                 Utils.getTranslationStringByCategory(category), newVolInt
-                        ));
+                            ));
+                        }
 
                         Utils.getToggleConsumerByCategory(config, category)
                                 .accept(!isToggled);
