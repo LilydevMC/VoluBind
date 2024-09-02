@@ -1,14 +1,13 @@
 package com.lilydev.volubind.config;
 
 import com.lilydev.volubind.VolubindClient;
-import com.lilydev.volubind.config.VolubindConfig;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.sound.SoundCategory;
 
 import java.util.EnumSet;
 
 import static com.lilydev.volubind.util.Utils.ConfigVolumeType;
-import static com.lilydev.volubind.util.Utils.getSubscriberByCategory;
+import static com.lilydev.volubind.util.Utils.getVolumeConsumerByCategory;
 import static com.lilydev.volubind.util.Utils.getToggleSupplierByCategory;
 
 public class ConfigSubscribers {
@@ -24,8 +23,8 @@ public class ConfigSubscribers {
     }
 
     private static void registerVolume(MinecraftClient client, SoundCategory category, ConfigVolumeType volType) {
-        VolubindConfig config = VolubindClient.CONFIG;
-        getSubscriberByCategory(config, category, volType).accept(vol -> {
+        com.lilydev.volubind.config.VolubindConfig config = VolubindClient.CONFIG;
+        getVolumeConsumerByCategory(config, category, volType).accept(vol -> {
             if (config.logVolumeChange()) {
                 logVolumeChange(category, volType, vol);
             }
@@ -42,11 +41,7 @@ public class ConfigSubscribers {
     }
 
     private static void logVolumeChange(SoundCategory category, ConfigVolumeType volType, int newVolume) {
-        VolubindClient.LOGGER.info(
-                "Volume '" + category + "'" +
-                (volType == ConfigVolumeType.TOGGLED ? " (Toggled)" : "") +
-                " set to: " + newVolume + "%"
-        );
+        VolubindClient.LOGGER.info("Volume '{}'{} set to: {}%", category, volType == ConfigVolumeType.TOGGLED ? " (Toggled)" : "", newVolume);
     }
 
 }

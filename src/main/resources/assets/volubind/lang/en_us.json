@@ -4,8 +4,13 @@
 	"text.config.volubind.section.general": "General",
 	"text.config.volubind.section.volumeControl": "Volume Control",
 
-	"text.config.volubind.option.sendChatMessages": "Send Chat Messages?",
-	"text.config.volubind.option.logVolumeChange": "Log Volume Change?",
+	"text.config.volubind.option.sendChatMessages": "Send Chat Messages",
+	"text.config.volubind.option.logVolumeChange": "Log Volume Change",
+
+	"text.config.volubind.option.enableSubtitles": "Subtitles",
+	"text.config.volubind.option.enableDirectionalAudio": "Directional Audio",
+
+	"text.config.volubind.category.soundDevice": "Sound Device",
 
 	"text.config.volubind.category.volumeToggled": "Toggled Volume",
 

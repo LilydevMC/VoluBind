@@ -1,6 +1,7 @@
 package com.lilydev.volubind.config;
 
 import com.lilydev.volubind.VolubindClient;
+import com.lilydev.volubind.ui.config.VolubindConfigScreen;
 import io.wispforest.owo.ui.base.BaseUIModelScreen;
 import io.wispforest.owo.ui.component.ButtonComponent;
 import io.wispforest.owo.ui.container.FlowLayout;
@@ -16,7 +17,7 @@ public class SoundOptionsSelectorScreen extends BaseUIModelScreen<FlowLayout> {
     Screen parent;
 
     public SoundOptionsSelectorScreen(Screen parent) {
-        super(FlowLayout.class, DataSource.asset(new Identifier(VolubindClient.MOD_ID, "sound_selector_model")));
+        super(FlowLayout.class, DataSource.asset(Identifier.of(VolubindClient.MOD_ID, "sound_selector_model")));
         this.parent = parent;
     }
 
@@ -24,7 +25,7 @@ public class SoundOptionsSelectorScreen extends BaseUIModelScreen<FlowLayout> {
     protected void build(FlowLayout rootComponent) {
         Objects.requireNonNull(rootComponent.childById(ButtonComponent.class, "volubind-button")).onPress(button -> {
             assert this.client != null;
-            this.client.setScreen(new ConfigScreenWrapper(this));
+            this.client.setScreen(new VolubindConfigScreen(this));
         });
 
         Objects.requireNonNull(rootComponent.childById(ButtonComponent.class, "sound-options-button")).onPress(button -> {

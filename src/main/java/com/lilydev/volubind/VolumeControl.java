@@ -1,6 +1,6 @@
 package com.lilydev.volubind;
 
-import com.lilydev.volubind.config.ConfigScreenWrapper;
+import com.lilydev.volubind.ui.config.VolubindConfigScreen;
 import com.lilydev.volubind.config.VolubindConfig;
 import com.lilydev.volubind.util.Utils;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
@@ -58,6 +58,8 @@ public class VolumeControl {
 
                     getSoundVolumeOption(client, category).setValue(newVolDouble);
                 });
+        config.enableSubtitles(client.options.getShowSubtitles().getValue());
+        config.enableDirectionalAudio(client.options.getDirectionalAudio().getValue());
     }
 
     private static KeyBinding buildKeybinding(String translationKey) {
@@ -71,7 +73,7 @@ public class VolumeControl {
         assert client.player != null;
 
         if (openGui.wasPressed()) {
-            client.setScreen(new ConfigScreenWrapper(client.currentScreen));
+            client.setScreen(new VolubindConfigScreen(client.currentScreen));
         }
 
         // Not entirely sure if this presents performance issues, but it seems

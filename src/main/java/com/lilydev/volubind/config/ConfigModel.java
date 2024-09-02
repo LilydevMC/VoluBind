@@ -1,16 +1,25 @@
 package com.lilydev.volubind.config;
 
-import io.wispforest.owo.config.annotation.*;
 import com.lilydev.volubind.VolubindClient;
+import io.wispforest.owo.config.annotation.*;
 
 @SuppressWarnings("unused")
-@Modmenu(modId = VolubindClient.MOD_ID)
-@Config(name = "volubind", wrapperName = "VolubindConfig")
+//@Modmenu(modId = VolubindClient.MOD_ID)
+@Config(name = VolubindClient.MOD_ID, wrapperName = "VolubindConfig")
 public class ConfigModel {
 
     @SectionHeader("general")
     public boolean sendChatMessages = true;
     public boolean logVolumeChange = false;
+
+    @Hook
+    public boolean enableSubtitles = false;
+
+    @Hook
+    public boolean enableDirectionalAudio = false;
+
+    @Hook
+    public String soundDevice = "";
 
     @SectionHeader("volumeControl")
 

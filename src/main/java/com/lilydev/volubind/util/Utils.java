@@ -8,14 +8,14 @@ import net.minecraft.sound.SoundCategory;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-// This class could probably use a lot of cleanup D:
+// TODO: Make class more readable and remove duplicate code
 public class Utils {
     public enum ConfigVolumeType {
         UNTOGGLED,
         TOGGLED
     }
 
-    public static Consumer<Consumer<Integer>> getSubscriberByCategory(
+    public static Consumer<Consumer<Integer>> getVolumeConsumerByCategory(
             VolubindConfig config,
             SoundCategory category,
             ConfigVolumeType volType
