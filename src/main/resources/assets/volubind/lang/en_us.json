@@ -10,7 +10,9 @@
 	"text.config.volubind.option.enableSubtitles": "Subtitles",
 	"text.config.volubind.option.enableDirectionalAudio": "Directional Audio",
 
-	"text.config.volubind.category.soundDevice": "Sound Device",
+	"text.config.volubind.option.soundDevice": "Sound Device",
+
+	"text.config.volubind.modal.soundDevice.title": "Select Sound Device",
 
 	"text.config.volubind.category.volumeToggled": "Toggled Volume",
 
