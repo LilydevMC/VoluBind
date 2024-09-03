@@ -15,6 +15,12 @@ public class ConfigSubscribers {
     public static void register() {
         MinecraftClient client = MinecraftClient.getInstance();
 
+        com.lilydev.volubind.config.VolubindConfig config = VolubindClient.CONFIG;
+
+        config.subscribeToEnableSubtitles(enabled -> client.options.getShowSubtitles().setValue(enabled));
+
+        config.subscribeToEnableDirectionalAudio(enabled -> client.options.getDirectionalAudio().setValue(enabled));
+
         EnumSet.allOf(SoundCategory.class)
                 .forEach(category -> {
                     registerVolume(client, category, ConfigVolumeType.UNTOGGLED);
