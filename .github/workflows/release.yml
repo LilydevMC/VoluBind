@@ -68,7 +68,7 @@ jobs:
           modrinth-id: kfEow3K7
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
 
-          github-tag: '${undefined}'
+          github-tag: "$MOD_VERSION-${{ github.event.inputs.minecraft_version_alias }}"
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
           name: "[${{ github.event.inputs.minecraft_version_alias }}] VoluBind v$MOD_VERSION"
