@@ -2,6 +2,7 @@ package com.lilydev.volubind.ui;
 
 import com.lilydev.volubind.VolubindClient;
 import com.lilydev.volubind.VolumeControl;
+import com.lilydev.volubind.config.ui.VolubindConfigScreen;
 import com.lilydev.volubind.util.Utils;
 import io.wispforest.owo.ui.base.BaseUIModelScreen;
 import io.wispforest.owo.ui.component.ButtonComponent;
@@ -10,10 +11,8 @@ import io.wispforest.owo.ui.component.LabelComponent;
 import io.wispforest.owo.ui.container.Containers;
 import io.wispforest.owo.ui.container.FlowLayout;
 import io.wispforest.owo.ui.container.ScrollContainer;
-import io.wispforest.owo.ui.core.Insets;
-import io.wispforest.owo.ui.core.Positioning;
-import io.wispforest.owo.ui.core.Sizing;
-import io.wispforest.owo.ui.core.VerticalAlignment;
+import io.wispforest.owo.ui.container.StackLayout;
+import io.wispforest.owo.ui.core.*;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
@@ -38,21 +37,19 @@ public class ToggleVolumeScreen extends BaseUIModelScreen<FlowLayout> {
         Text untoggledVolText = Text.translatable("volubind.screen.toggle_volume.entry.button.untoggled");
 
         VolumeControl.toggleVolumeByCategory(VolubindClient.CONFIG, category);
-        if (volumeToggled) {
-            buttonComponent.setMessage(untoggledVolText);
-        } else {
-            buttonComponent.setMessage(toggledVolText);
-        }
+        buttonComponent.setMessage(volumeToggled ? untoggledVolText : toggledVolText);
     }
 
     @Override
     protected void build(FlowLayout rootComponent) {
         assert this.client != null;
 
+        StackLayout contentContainer = Containers.stack(Sizing.fill(), Sizing.expand());
         FlowLayout contentFlow = Containers.verticalFlow(Sizing.content(), Sizing.content());
         contentFlow.id("toggle-volume-content");
         contentFlow.gap(4);
         contentFlow.padding(Insets.horizontal(5));
+
 
         ScrollContainer<FlowLayout> pageScroll = Containers.verticalScroll(
             Sizing.fixed(360),
@@ -61,6 +58,7 @@ public class ToggleVolumeScreen extends BaseUIModelScreen<FlowLayout> {
         );
 
         pageScroll.padding(Insets.bottom(20));
+        contentContainer.child(pageScroll);
 
         EnumSet.allOf(SoundCategory.class).forEach(soundCategory -> {
             FlowLayout buttonFlow = Containers.horizontalFlow(Sizing.fill(), Sizing.fixed(20));
@@ -90,6 +88,29 @@ public class ToggleVolumeScreen extends BaseUIModelScreen<FlowLayout> {
             contentFlow.child(buttonFlow);
         });
 
+        FlowLayout navigationBar = Containers.horizontalFlow(Sizing.fill(), Sizing.fixed(20));
+        navigationBar.padding(Insets.horizontal(50));
+        navigationBar.margins(Insets.vertical(5));
+        navigationBar.verticalAlignment(VerticalAlignment.CENTER);
+        navigationBar.horizontalAlignment(HorizontalAlignment.CENTER);
+        navigationBar.gap(5);
+
+        ButtonComponent backButton = Components.button(
+            Text.translatable("volubind.screen.toggle_volume.navigation.back"),
+            buttonComponent -> this.client.setScreen(parent)
+        );
+        backButton.horizontalSizing(Sizing.fixed(120));
+
+        ButtonComponent modSettingsButton = Components.button(
+            Text.translatable("volubind.screen.toggle_volume.navigation.mod_settings"),
+            buttonComponent -> this.client.setScreen(new VolubindConfigScreen(parent))
+        );
+        modSettingsButton.horizontalSizing(Sizing.fixed(120));
+
+        navigationBar.child(backButton);
+        navigationBar.child(modSettingsButton);
+
         rootComponent.child(pageScroll);
+        rootComponent.child(navigationBar);
     }
 }

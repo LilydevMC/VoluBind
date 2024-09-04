@@ -41,6 +41,8 @@
 
 	"volubind.key.category": "VoluBind",
 	"volubind.screen.toggle_volume.title": "Toggle Volume",
+	"volubind.screen.toggle_volume.navigation.back": "Back",
+	"volubind.screen.toggle_volume.navigation.mod_settings": "VoluBind settings...",
 	"volubind.screen.toggle_volume.entry.label": [
 		"Toggle ",
 		{
