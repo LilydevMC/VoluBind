@@ -1,0 +1,26 @@
+<owo-ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/wisp-forest/owo-lib/1.21/owo-ui.xsd">
+    <components>
+        <flow-layout direction="vertical" id="toggle-volume-container">
+            <children>
+                <flow-layout direction="horizontal" id="toggle-volume-title-bar">
+                    <children>
+                        <label>
+                            <text translate="true">volubind.screen.toggle_volume.title</text>
+                            <margins>
+                                <vertical>10</vertical>
+                            </margins>
+                        </label>
+                    </children>
+                    <vertical-alignment>center</vertical-alignment>
+                    <horizontal-alignment>left</horizontal-alignment>
+                </flow-layout>
+            </children>
+            <vertical-alignment>center</vertical-alignment>
+            <horizontal-alignment>center</horizontal-alignment>
+            <surface>
+                <options-background/>
+            </surface>
+        </flow-layout>
+    </components>
+</owo-ui>

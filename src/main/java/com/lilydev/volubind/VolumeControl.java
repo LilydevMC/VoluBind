@@ -2,6 +2,7 @@ package com.lilydev.volubind;
 
 import com.lilydev.volubind.config.ui.VolubindConfigScreen;
 import com.lilydev.volubind.config.VolubindConfig;
+import com.lilydev.volubind.ui.ToggleVolumeScreen;
 import com.lilydev.volubind.util.Utils;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
@@ -16,6 +17,7 @@ import java.util.EnumSet;
 
 public class VolumeControl {
     private static KeyBinding openGui;
+    private static KeyBinding openToggleGui;
     public static KeyBinding toggleMaster;
     public static KeyBinding toggleMusic;
     public static KeyBinding toggleMusicBlock;
@@ -28,19 +30,23 @@ public class VolumeControl {
     public static KeyBinding toggleVoice;
 
 
+
     // Translation keys have extra numbers because the Controls GUI orders them lexicographically
     public static void init() {
         openGui           = buildKeybinding("volubind.key.00.openGui");
-        toggleMaster      = buildKeybinding("volubind.key.01.toggleMaster");
-        toggleMusic       = buildKeybinding("volubind.key.02.toggleMusic");
-        toggleMusicBlock  = buildKeybinding("volubind.key.03.toggleMusicBlock");
-        toggleWeather     = buildKeybinding("volubind.key.04.toggleWeather");
-        toggleBlock       = buildKeybinding("volubind.key.05.toggleBlock");
-        toggleHostile     = buildKeybinding("volubind.key.06.toggleHostile");
-        toggleFriendly    = buildKeybinding("volubind.key.07.toggleFriendly");
-        togglePlayer      = buildKeybinding("volubind.key.08.togglePlayer");
-        toggleAmbient     = buildKeybinding("volubind.key.09.toggleAmbient");
-        toggleVoice       = buildKeybinding("volubind.key.10.toggleVoice");
+        openToggleGui     = buildKeybinding("volubind.key.01.openToggleGui");
+        toggleMaster      = buildKeybinding("volubind.key.02.toggleMaster");
+        toggleMusic       = buildKeybinding("volubind.key.03.toggleMusic");
+        toggleMusicBlock  = buildKeybinding("volubind.key.04.toggleMusicBlock");
+        toggleWeather     = buildKeybinding("volubind.key.05.toggleWeather");
+        toggleBlock       = buildKeybinding("volubind.key.06.toggleBlock");
+        toggleHostile     = buildKeybinding("volubind.key.07.toggleHostile");
+        toggleFriendly    = buildKeybinding("volubind.key.08.toggleFriendly");
+        togglePlayer      = buildKeybinding("volubind.key.09.togglePlayer");
+        toggleAmbient     = buildKeybinding("volubind.key.10.toggleAmbient");
+        toggleVoice       = buildKeybinding("volubind.key.11.toggleVoice");
+
+
     }
 
     public static void initVolumeOptions(MinecraftClient client) {
@@ -68,12 +74,29 @@ public class VolumeControl {
         ));
     }
 
+    public static void toggleVolumeByCategory(VolubindConfig config, SoundCategory category) {
+        var setToggle = Utils.getVolumeToggleConsumerByCategory(config, category);
+        boolean isToggled = Utils.getVolumeToggleSupplierByCategory(config, category).get();
+
+        int newVolume = Utils.getVolumeSupplierByCategory(
+                config,
+                category,
+                isToggled ? Utils.ConfigVolumeType.UNTOGGLED : Utils.ConfigVolumeType.TOGGLED
+        ).get();
+        getSoundVolumeOption(MinecraftClient.getInstance(), category).setValue(volumeIntToDouble(newVolume));
+        setToggle.accept(!isToggled);
+    }
+
     public static void processKeyPress(MinecraftClient client) {
         VolubindConfig config = VolubindClient.CONFIG;
         assert client.player != null;
 
         if (openGui.wasPressed()) {
             client.setScreen(new VolubindConfigScreen(client.currentScreen));
+        }
+
+        if (openToggleGui.wasPressed()) {
+            client.setScreen(new ToggleVolumeScreen(client.currentScreen));
         }
 
         // Not entirely sure if this presents performance issues, but it seems

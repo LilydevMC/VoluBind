@@ -15,6 +15,42 @@ public class Utils {
         TOGGLED
     }
 
+    public static Consumer<Boolean> getVolumeToggleConsumerByCategory(
+        VolubindConfig config,
+        SoundCategory category
+    ) {
+        return switch (category) {
+            case MASTER   -> config::masterToggled;
+            case MUSIC    -> config::musicToggled;
+            case RECORDS  -> config::musicBlockToggled;
+            case WEATHER  -> config::weatherToggled;
+            case BLOCKS   -> config::blockToggled;
+            case HOSTILE  -> config::hostileToggled;
+            case NEUTRAL  -> config::friendlyToggled;
+            case PLAYERS  -> config::playerToggled;
+            case AMBIENT  -> config::ambientToggled;
+            case VOICE    -> config::voiceToggled;
+        };
+    }
+
+    public static Supplier<Boolean> getVolumeToggleSupplierByCategory(
+        VolubindConfig config,
+        SoundCategory category
+    ) {
+        return switch (category) {
+            case MASTER   -> config::masterToggled;
+            case MUSIC    -> config::musicToggled;
+            case RECORDS  -> config::musicBlockToggled;
+            case WEATHER  -> config::weatherToggled;
+            case BLOCKS   -> config::blockToggled;
+            case HOSTILE  -> config::hostileToggled;
+            case NEUTRAL  -> config::friendlyToggled;
+            case PLAYERS  -> config::playerToggled;
+            case AMBIENT  -> config::ambientToggled;
+            case VOICE    -> config::voiceToggled;
+        };
+    }
+
     public static Consumer<Consumer<Integer>> getVolumeConsumerByCategory(
             VolubindConfig config,
             SoundCategory category,
