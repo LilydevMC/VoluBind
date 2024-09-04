@@ -1,5 +1,5 @@
 {
-	"text.config.volubind.title": "VoluBind",
+	"text.config.volubind.title": "VoluBind Configuration",
 
 	"text.config.volubind.section.general": "General",
 	"text.config.volubind.section.volumeControl": "Volume Control",
@@ -36,6 +36,8 @@
 	"text.config.volubind.option.volumeToggled.ambientVolumeToggled": "Ambient/Environment Volume (Toggled)",
 	"text.config.volubind.option.voiceVolume": "Voice/Speech Volume",
 	"text.config.volubind.option.volumeToggled.voiceVolumeToggled": "Voice/Speech Volume (Toggled)",
+
+	"text.config.volubind.navigation.vanillaOptions": "Vanilla Options...",
 
 	"volubind.key.category": "VoluBind",
 
@@ -243,7 +245,7 @@
 		"%"
 	],
 
-	"volubind.screen.sound_selector.label": [
+	"volubind.screen.sound_selector.warning.label": [
 		"",
 		{
 			"text": "WARNING!\n",
@@ -263,6 +265,6 @@
 		}
 	],
 
-	"volubind.screen.sound_selector.volubind": "VoluBind Sound Options...",
-	"volubind.screen.sound_selector.vanilla": "Vanilla Sound Options..."
+	"volubind.screen.sound_selector.continue": "➡ Continue",
+	"volubind.screen.sound_selector.back": "⬅ Back"
 }

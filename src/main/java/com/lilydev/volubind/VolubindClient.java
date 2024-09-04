@@ -2,7 +2,7 @@ package com.lilydev.volubind;
 
 import com.lilydev.volubind.config.ConfigSubscribers;
 import com.lilydev.volubind.config.VolubindConfig;
-import com.lilydev.volubind.ui.config.VolubindConfigScreen;
+import com.lilydev.volubind.config.ui.VolubindConfigScreen;
 import io.wispforest.owo.config.ui.ConfigScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;

@@ -1,4 +1,4 @@
-package com.lilydev.volubind.ui.config;
+package com.lilydev.volubind.config.ui;
 
 import com.lilydev.volubind.VolubindClient;
 import io.wispforest.owo.config.Option;
@@ -69,13 +69,42 @@ public class VolubindConfigScreen extends ConfigScreen {
     protected void build(FlowLayout rootComponent) {
         super.build(rootComponent);
 
+        assert this.client != null;
+
+        // Remove the original title bar and replace it with a custom one below
+        FlowLayout originalTitleBar = (FlowLayout) rootComponent.children().getFirst();
+        originalTitleBar.removeChild(originalTitleBar.children().getFirst());
+        originalTitleBar.remove();
+
+        FlowLayout newTitleBar = Containers.horizontalFlow(Sizing.fill(), Sizing.content());
+        newTitleBar.padding(Insets.horizontal(50));
+        newTitleBar.margins(Insets.vertical(5));
+        newTitleBar.verticalAlignment(VerticalAlignment.CENTER);
+
+        LabelComponent titleLabel = Components.label(
+                Text.translatable("text.config.volubind.title")
+        );
+        titleLabel.horizontalSizing(Sizing.expand());
+
+        ButtonComponent vanillaOptionsButton = Components.button(
+                Text.translatable("text.config.volubind.navigation.vanillaOptions"),
+                button -> this.client.setScreen(new VanillaSoundOptionsWarningScreen(this))
+        );
+        vanillaOptionsButton.id("vanilla-options-button");
+        vanillaOptionsButton.sizing(Sizing.fixed(100), Sizing.fixed(20));
+
+        newTitleBar.child(titleLabel);
+        newTitleBar.child(vanillaOptionsButton);
+
+        rootComponent.child(0, newTitleBar);
+
         FlowLayout dropdownFlow = Containers.verticalFlow(Sizing.fill(), Sizing.content());
         dropdownFlow.id("sound-devices-dropdown");
         dropdownFlow.surface(Surface.BLANK);
         dropdownFlow.gap(1);
         dropdownFlow.padding(Insets.of(2, 2, 1, 1));
 
-        assert this.client != null;
+
         List<String> soundDevices = this.client.getSoundManager().getSoundDevices();
         for (String device : soundDevices) {
             int deviceIndex = soundDevices.indexOf(device);
@@ -111,15 +140,15 @@ public class VolubindConfigScreen extends ConfigScreen {
         );
         modalExitButton.sizing(Sizing.fixed(20));
 
-        FlowLayout titleBarFlow = Containers.horizontalFlow(Sizing.fill(), Sizing.content());
-        titleBarFlow.verticalAlignment(VerticalAlignment.CENTER);
-        titleBarFlow.child(modalLabel);
-        titleBarFlow.child(modalExitButton);
-        titleBarFlow.padding(Insets.horizontal(5));
+        FlowLayout modalTitleFlow = Containers.horizontalFlow(Sizing.fill(), Sizing.content());
+        modalTitleFlow.verticalAlignment(VerticalAlignment.CENTER);
+        modalTitleFlow.child(modalLabel);
+        modalTitleFlow.child(modalExitButton);
+        modalTitleFlow.padding(Insets.horizontal(5));
 
         FlowLayout modalFlow = Containers.verticalFlow(Sizing.fill(), Sizing.fill());
         modalFlow.id("sound-devices-modal");
-        modalFlow.child(titleBarFlow);
+        modalFlow.child(modalTitleFlow);
         modalFlow.child(dropdownScrollContainer);
         modalFlow.padding(Insets.of(6, 6, 5, 5));
         modalFlow.gap(2);

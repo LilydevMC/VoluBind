@@ -1,6 +1,6 @@
 package com.lilydev.volubind;
 
-import com.lilydev.volubind.ui.config.VolubindConfigScreen;
+import com.lilydev.volubind.config.ui.VolubindConfigScreen;
 import com.lilydev.volubind.config.VolubindConfig;
 import com.lilydev.volubind.util.Utils;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;

@@ -1,12 +1,12 @@
 <owo-ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/wisp-forest/owo-lib/1.20/owo-ui.xsd">
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/wisp-forest/owo-lib/1.21/owo-ui.xsd">
     <components>
         <flow-layout direction="vertical">
             <children>
                 <flow-layout direction="vertical">
                     <children>
                         <label>
-                            <text translate="true">volubind.screen.sound_selector.label</text>
+                            <text translate="true">volubind.screen.sound_selector.warning.label</text>
                             <margins>
                                 <bottom>14</bottom>
                             </margins>
@@ -15,8 +15,8 @@
                             </sizing>
                             <horizontal-text-alignment>center</horizontal-text-alignment>
                         </label>
-                        <button id="volubind-button">
-                            <text translate="true">volubind.screen.sound_selector.volubind</text>
+                        <button id="sound-selector-vanilla-sound-options-button">
+                            <text translate="true">volubind.screen.sound_selector.continue</text>
                             <margins>
                                 <bottom>2</bottom>
                             </margins>
@@ -25,18 +25,8 @@
                                 <vertical method="fixed">20</vertical>
                             </sizing>
                         </button>
-                        <button id="sound-options-button">
-                            <text translate="true">volubind.screen.sound_selector.vanilla</text>
-                            <sizing>
-                                <horizontal method="fixed">160</horizontal>
-                                <vertical method="fixed">20</vertical>
-                            </sizing>
-                        </button>
-                        <button id="done-button">
-                            <text translate="true">gui.done</text>
-                            <margins>
-                                <top>16</top>
-                            </margins>
+                        <button id="sound-selector-back-button">
+                            <text translate="true">volubind.screen.sound_selector.back</text>
                             <sizing>
                                 <horizontal method="fixed">160</horizontal>
                                 <vertical method="fixed">20</vertical>
@@ -48,6 +38,9 @@
             </children>
             <vertical-alignment>center</vertical-alignment>
             <horizontal-alignment>center</horizontal-alignment>
+            <surface>
+                <options-background/>
+            </surface>
         </flow-layout>
     </components>
 </owo-ui>
