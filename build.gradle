@@ -63,7 +63,13 @@ java {
 
 jar {
 	from("LICENSE") {
-		rename { "${it}_${project.base.archivesName.get()}" }
+		rename { "${it}_${this.base.archivesName.get()}" }
+	}
+}
+
+tasks.register('printProjectVersion') {
+	doLast {
+		println(project.findProperty('mod_version'))
 	}
 }
 
@@ -83,19 +89,11 @@ publishing {
 		maven {
 			name "lilydevMaven"
 
-			if (
-				project.mod_version.contains("beta") ||
-				project.mod_version.contains("alpha") ||
-				project.mod_version.contains("snapshot")
-			) {
-				url "https://maven.lilydev.com/snapshots"
-			} else {
-				url "https://maven.lilydev.com/releases"
-			}
+			url "https://maven.lilydev.com/releases"
 
 			credentials {
-				username env.REPO_USER.orNull()
-				password env.REPO_TOKEN.orNull()
+				username System.getenv("MAVEN_USERNAME")
+				password System.getenv("MAVEN_PASSWORD")
 			}
 		}
 	}
