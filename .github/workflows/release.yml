@@ -81,6 +81,8 @@ jobs:
             quilt
           game-versions: |
             ${{ github.event.inputs.supported_game_versions }}
+          modrinth-game-versions: |
+            ${{ github.event.inputs.supported_game_versions }}
           dependencies: |
             fabric-api
             owo-lib
