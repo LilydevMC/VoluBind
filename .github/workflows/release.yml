@@ -79,8 +79,7 @@ jobs:
           loaders: |
             fabric
             quilt
-          game-versions: |
-            ${{ github.event.inputs.supported_game_versions }}
+          game-versions: ">1.21.x <1.22"
           dependencies: |
             fabric-api
             owo-lib
