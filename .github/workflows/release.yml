@@ -80,7 +80,7 @@ jobs:
             fabric
             quilt
           game-versions: |
-            "${{ github.event.inputs.supported_game_versions }}"
+            ${{ github.event.inputs.supported_game_versions }}
           dependencies: |
             fabric-api
             owo-lib
