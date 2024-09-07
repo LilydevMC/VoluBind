@@ -52,7 +52,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Get mod version
-        run: echo "MOD_VERSION=$(./gradlew -q printProjectVersion)"
+        run: echo "MOD_VERSION=$(./gradlew -q printProjectVersion)" >> $GITHUB_ENV
 
       - name: Build
         run: ./gradlew build
